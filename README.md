@@ -1,2 +1,2 @@
 # Tercel
-This sample Repo for Tercel
+This sample Repo for Tercel.
