@@ -23,3 +23,7 @@ This is My first text file for Git Check in
 
 This is My first text file for Git Check in
 ~                                             
+
+
+This is My first text file for Git Check in 
+~   
