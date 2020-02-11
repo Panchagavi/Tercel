@@ -1,7 +1,7 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_01C5G57ZMOVSA43qQG06AMPpw8dwzD7Dsga",
-    "name": "dev Import Atomics for Azure",
+    "name": "dev Import Atomics for Azure Updated",
     "title": "dev Import Atomics for Azure",
     "type": "generic.workflow",
     "base_type": "workflow",
