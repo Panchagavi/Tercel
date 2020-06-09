@@ -1,0 +1,133 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01FSO78NA2JTF79obFyLRYEyDED2eewe5pe",
+    "name": "TercelWithoutInputFields",
+    "title": "TercelWithoutInputFields",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "OP",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01FSOCEIX1PGT0tkpuHd7Dr0z1H1O4BxhGE",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "TercelWithoutInputFields",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01FSO7GEQH49V5LKeVAxtFUWmnNV89JB8dE",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "skip_execution": false,
+          "sleep_interval": 10
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01FSOBX7BWVX73eJQT4T0KR8NYAasn3pE4B",
+        "name": "To Lower",
+        "title": "To Lower",
+        "type": "core.string2lower",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "To Lower",
+          "skip_execution": false,
+          "source": "heloo"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01FSOBYBXY55H4aQIpZQxW9YKDqEsXcfBDK",
+        "name": "To Lower",
+        "title": "To Lower",
+        "type": "core.string2lower",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "To Lower",
+          "skip_execution": false,
+          "source": "1"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01FSOBZBUJR746OcSLCFqc7aToSxA5qHcN2",
+        "name": "To Lower",
+        "title": "To Lower",
+        "type": "core.string2lower",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "To Lower",
+          "skip_execution": false,
+          "source": "1.1"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01FSOC7K5G0LG1kMP8svrRPyy9LdqHZftXF",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01FSO78NA2JTF79obFyLRYEyDED2eewe5pe.output.variable_workflow_01FSOCEIX1PGT0tkpuHd7Dr0z1H1O4BxhGE$",
+              "variable_value_new": "$activity.definition_activity_01FSOBX7BWVX73eJQT4T0KR8NYAasn3pE4B.output.lowercase_text$:$activity.definition_activity_01FSOBYBXY55H4aQIpZQxW9YKDqEsXcfBDK.output.lowercase_text$:$activity.definition_activity_01FSOBZBUJR746OcSLCFqc7aToSxA5qHcN2.output.lowercase_text$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb"
+    ]
+  },
+  "categories": {
+    "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb": {
+      "unique_name": "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb",
+      "name": "tercel",
+      "title": "tercel",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  }
+}
