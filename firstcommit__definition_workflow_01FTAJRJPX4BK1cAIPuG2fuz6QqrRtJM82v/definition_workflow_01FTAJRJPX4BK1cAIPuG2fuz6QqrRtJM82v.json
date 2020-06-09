@@ -1,0 +1,155 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01FTAJRJPX4BK1cAIPuG2fuz6QqrRtJM82v",
+    "name": "TercelService - Input with string, Int, decimal dataType",
+    "title": "TercelService - Input with string, Int, decimal dataType",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.number",
+        "properties": {
+          "value": 0,
+          "scope": "input",
+          "name": "Input_Decimal",
+          "type": "datatype.number",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01FTAKPFAV3TU0RnUOHr6j8ls5vmsjEP2OH",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Input_String",
+          "type": "datatype.string",
+          "is_required": true
+        },
+        "unique_name": "variable_workflow_01FTAJRJI850B2FdHSbNKU7QqRP8GzKqPm6",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Output",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01FTAJRJI7Y271LfdVCk2iURePa52EL4NBH",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "input",
+          "name": "Input_Integer",
+          "type": "datatype.integer",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01FTAKHYS8Z5M5JnsaLvPIJMQ5T4fU0UpJ6",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "TercelService - Input with string, Int, decimal dataType",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01FTAJS50676H5SFPx9gzy7EXOZPiFXDLFk",
+        "name": "To Lower",
+        "title": "To Lower",
+        "type": "core.string2lower",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "To Lower",
+          "skip_execution": false,
+          "source": "$workflow.definition_workflow_01FTAJRJPX4BK1cAIPuG2fuz6QqrRtJM82v.input.variable_workflow_01FTAJRJI850B2FdHSbNKU7QqRP8GzKqPm6$"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01FTAJS9WRJQM0acupDNVAwbolOjrdcVl2R",
+        "name": "To Lower",
+        "title": "To Lower",
+        "type": "core.string2lower",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "To Lower",
+          "skip_execution": false,
+          "source": "$workflow.definition_workflow_01FTAJRJPX4BK1cAIPuG2fuz6QqrRtJM82v.input.variable_workflow_01FTAKHYS8Z5M5JnsaLvPIJMQ5T4fU0UpJ6$"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01FTAJSEFL8IO7adrkQMX2SjLkOtEGPDjbT",
+        "name": "To Lower",
+        "title": "To Lower",
+        "type": "core.string2lower",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "To Lower",
+          "skip_execution": false,
+          "source": "$workflow.definition_workflow_01FTAJRJPX4BK1cAIPuG2fuz6QqrRtJM82v.input.variable_workflow_01FTAKPFAV3TU0RnUOHr6j8ls5vmsjEP2OH$"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01FTAJSJ32UH41xzfwwK0tFWhwtlPkbvBzE",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01FTAJRJPX4BK1cAIPuG2fuz6QqrRtJM82v.output.variable_workflow_01FTAJRJI7Y271LfdVCk2iURePa52EL4NBH$",
+              "variable_value_new": "$activity.definition_activity_01FTAJS50676H5SFPx9gzy7EXOZPiFXDLFk.output.lowercase_text$:$activity.definition_activity_01FTAJS9WRJQM0acupDNVAwbolOjrdcVl2R.output.lowercase_text$:$activity.definition_activity_01FTAJSEFL8IO7adrkQMX2SjLkOtEGPDjbT.output.lowercase_text$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb"
+    ]
+  },
+  "categories": {
+    "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb": {
+      "unique_name": "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb",
+      "name": "tercel",
+      "title": "tercel",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  }
+}
