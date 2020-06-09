@@ -1,0 +1,177 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01G621LY1IU2G01ES8t3QRqUgXEjkKr1Vcy",
+    "name": "Country and State withoutInput",
+    "title": "Country and State withoutInput",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "india",
+          "scope": "local",
+          "name": "Country",
+          "type": "datatype.string",
+          "is_required": true
+        },
+        "unique_name": "variable_workflow_01G621LX4F54Z0FejObrzx11EvCpDN6iVpB",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "OPIN",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01G621LX4EGVE24I23RQJlcfSNueUSxHyhm",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Country and State withoutInput",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01G621NGQG7RB5n6i3uCqSHH1HliFLwTeUy",
+        "name": "To Lower",
+        "title": "To Lower",
+        "type": "core.string2lower",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "To Lower",
+          "skip_execution": false,
+          "source": "$workflow.definition_workflow_01G621LY1IU2G01ES8t3QRqUgXEjkKr1Vcy.local.variable_workflow_01G621LX4F54Z0FejObrzx11EvCpDN6iVpB$"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01G621NGOQNCF217gu8RyBG8ashags4niqA",
+        "name": "Condition Block",
+        "title": "Condition Block",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Condition Block",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01G621OAL13AB4HVoavVCaSvEFoOwQL4RbF",
+            "name": "Condition Branch",
+            "title": "Condition Branch",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01G621LY1IU2G01ES8t3QRqUgXEjkKr1Vcy.local.variable_workflow_01G621LX4F54Z0FejObrzx11EvCpDN6iVpB$",
+                "operator": "eq",
+                "right_operand": "india"
+              },
+              "continue_on_failure": false,
+              "display_name": "Condition Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01G621OPZLKDO2xSqGZSRFO6y94tDcJse6z",
+                "name": "Set Variables",
+                "title": "Set Variables",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01G621LY1IU2G01ES8t3QRqUgXEjkKr1Vcy.output.variable_workflow_01G621LX4EGVE24I23RQJlcfSNueUSxHyhm$",
+                      "variable_value_new": "{ \"states\": [\"KA\":\"BN\", \"MH\":\"MU\", \"TN\":\"CH\" ,\"KL\":\"TN\"]}"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01G621P4AF97Z3mpClTLdgSLaIkRRdElPq0",
+            "name": "Condition Branch",
+            "title": "Condition Branch",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01G621LY1IU2G01ES8t3QRqUgXEjkKr1Vcy.local.variable_workflow_01G621LX4F54Z0FejObrzx11EvCpDN6iVpB$",
+                "operator": "eq",
+                "right_operand": "usa"
+              },
+              "continue_on_failure": false,
+              "display_name": "Condition Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01G621P1V2GXJ7jldwmP1tD9JN6eR5B90cA",
+                "name": "Set Variables",
+                "title": "Set Variables",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01G621LY1IU2G01ES8t3QRqUgXEjkKr1Vcy.output.variable_workflow_01G621LX4EGVE24I23RQJlcfSNueUSxHyhm$",
+                      "variable_value_new": "{ \"states\": [\"Arizona\", \"Texas\", \"California\"]}"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb"
+    ]
+  },
+  "categories": {
+    "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb": {
+      "unique_name": "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb",
+      "name": "tercel",
+      "title": "tercel",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  }
+}
