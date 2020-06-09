@@ -1,0 +1,214 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01GFHQ24PW2WW18JZKT3sQtdeFMRHEr5s3t",
+    "name": "CreateACentOSDepInWM",
+    "title": "CreateACentOSDepInWM",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "OP for Deployment Status",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01GFIM495SUMP36NcP41Vf6eRMcmUwFlOEU",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Deploymanet_Name",
+          "type": "datatype.string",
+          "is_required": true
+        },
+        "unique_name": "variable_workflow_01GFICXFT5IQK1wWUTlOanb2D4AsDwJVxfm",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "New_MetaData_AppProfile",
+          "type": "datatype.string",
+          "is_required": true
+        },
+        "unique_name": "variable_workflow_01GFID2Z84ONZ0RKoqhUabHPnNYaXRxsm01",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "OP for Deployment",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01GFID9BBB9G41U2hhRlo2K0hG5OaVBQP30",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "CreateACentOSDepInWM",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "no_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01GFIBPTR4TK71J5ZE9MfL1B5z9sEtpPRRz",
+        "name": "Generic CCS API Request",
+        "title": "Generic CCS API Request",
+        "type": "ccs.api_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "api_body": "{\n        \"appId\": 29,\n        \"appVersion\": \"1.1\",\n        \"name\": \"$workflow.definition_workflow_01GFHQ24PW2WW18JZKT3sQtdeFMRHEr5s3t.input.variable_workflow_01GFICXFT5IQK1wWUTlOanb2D4AsDwJVxfm$\",\n        \"metadatas\": [\n                {\n                        \"id\": 7,\n                        \"namespace\": \"\",\n                        \"tagName\": \"New_MetaData_AppProfile\",\n                        \"tagCollectionId\": 7,\n                        \"value\": \"$workflow.definition_workflow_01GFHQ24PW2WW18JZKT3sQtdeFMRHEr5s3t.input.variable_workflow_01GFID2Z84ONZ0RKoqhUabHPnNYaXRxsm01$\",\n                        \"required\": true,\n                        \"editable\": true,\n                        \"name\": \"New_MetaData_AppProfile\"\n                },\n                {\n                        \"id\": 8,\n                        \"namespace\": \"\",\n                        \"tagName\": \"IsThisCluster\",\n                        \"tagCollectionId\": 7,\n                        \"value\": \"Yes 2VM Cluster\",\n                        \"required\": false,\n                        \"editable\": false,\n                        \"name\": \"IsThisCluster\"\n                },\n                {\n                        \"id\": 11,\n                        \"namespace\": \"\",\n                        \"tagName\": \"New_MetaData_AppProfile1\",\n                        \"tagCollectionId\": 7,\n                        \"value\": \"App  profile centOS\",\n                        \"required\": false,\n                        \"editable\": false,\n                        \"name\": \"New_MetaData_AppProfile1\"\n                },\n                {\n                        \"id\": 12,\n                        \"namespace\": \"\",\n                        \"tagName\": \"ProfileName\",\n                        \"tagCollectionId\": 7,\n                        \"value\": \"CentOS\",\n                        \"required\": true,\n                        \"editable\": true,\n                        \"name\": \"ProfileName\"\n                },\n                {\n                        \"id\": 13,\n                        \"namespace\": \"\",\n                        \"tagName\": \"DeploymentScaling\",\n                        \"tagCollectionId\": 7,\n                        \"value\": \"Scaled up to one VM\",\n                        \"required\": true,\n                        \"editable\": false,\n                        \"name\": \"DeploymentScaling\"\n                },\n                {\n                        \"id\": 14,\n                        \"namespace\": \"\",\n                        \"tagName\": \"Name\",\n                        \"tagCollectionId\": 7,\n                        \"value\": \"%JOB_NAME%\",\n                        \"required\": true,\n                        \"editable\": false,\n                        \"name\": \"Name\"\n                }\n        ],\n        \"environmentId\": \"1\",\n        \"tagIds\": [\n                \"1\"\n        ],\n        \"securityProfileIds\": null,\n        \"agingPolicyId\": \"1\",\n        \"suspensionPolicyId\": null,\n        \"policyIds\": null,\n        \"preventTermination\": false,\n        \"parameters\": {\n                \"appParams\": [\n                        {\n                                \"name\": \"Test_Field\",\n                                \"value\": \"Default\"\n                        },\n                        {\n                                \"name\": \"Test_Number\",\n                                \"value\": \"1\"\n                        }\n                ],\n                \"cloudParams\": {\n                        \"cloudRegionId\": \"1\",\n                        \"accountId\": \"1\"\n                }\n        },\n        \"jobs\": [\n                {\n                        \"tierId\": \"30\",\n                        \"policyIds\": null,\n                        \"tagIds\": [],\n                        \"securityProfileIds\": null,\n                        \"parameters\": {\n                                \"appParams\": [\n                                        {\n                                                \"name\": \"referredJob\",\n                                                \"value\": \"\"\n                                        },\n                                        {\n                                                \"name\": \"SSHPreference\",\n                                                \"value\": \"NO_PREFERENCE\"\n                                        }\n                                ],\n                                \"envParams\": [],\n                                \"cloudParams\": {\n                                        \"cloudRegionId\": \"1\",\n                                        \"accountId\": \"1\",\n                                        \"volumes\": [\n                                                {\n                                                        \"name\": \"RootVolume\",\n                                                        \"bootable\": true,\n                                                        \"size\": null,\n                                                        \"type\": \"storage-Vcenter65-default\",\n                                                        \"iops\": null\n                                                }\n                                        ],\n                                        \"rootVolumeSize\": \"0\",\n                                        \"cloudProperties\": [\n                                                {\n                                                        \"name\": \"FullClone\",\n                                                        \"value\": \"true\"\n                                                },\n                                                {\n                                                        \"name\": \"UserDataCenterName\",\n                                                        \"value\": \"PSC-Datacenter\"\n                                                },\n                                                {\n                                                        \"name\": \"UserClusterName\",\n                                                        \"value\": \"PCS-DC-Cluster\"\n                                                },\n                                                {\n                                                        \"name\": \"UserDatastoreCluster\",\n                                                        \"value\": \"VC65-LUN162\"\n                                                },\n                                                {\n                                                        \"name\": \"UserResourcePoolName\",\n                                                        \"value\": \"Cloud\"\n                                                },\n                                                {\n                                                        \"name\": \"VMGroup\",\n                                                        \"value\": \"\"\n                                                },\n                                                {\n                                                        \"name\": \"UserDatastore\",\n                                                        \"value\": \"\"\n                                                },\n                                                {\n                                                        \"name\": \"UserTargetDeploymentFolder\",\n                                                        \"value\": \"/CliqrTemplates\"\n                                                },\n                                                {\n                                                        \"name\": \"CC_AUTO_SELECT_NETWORK\",\n                                                        \"value\": false\n                                                },\n                                                {\n                                                        \"name\": \"numNICs\",\n                                                        \"value\": \"\"\n                                                }\n                                        ],\n                                        \"nics\": [\n                                                {\n                                                        \"order\": 1,\n                                                        \"id\": \"172.23.14.x\",\n                                                        \"type\": \"NETWORK\"\n                                                }\n                                        ],\n                                        \"instance\": \"default\"\n                                }\n                        },\n                        \"appServices\": [],\n                        \"numNodesToLaunch\": 1\n                }\n        ],\n        \"timeZone\": \"GMT+05:30\",\n        \"responseJobJaxbNotRequired\": true\n}",
+          "api_call_method": "POST",
+          "continue_on_failure": false,
+          "display_name": "Generic CCS API Request",
+          "relative_url": "cloudcenter-ccm-backend//api/v2/jobs",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GFIDZ1EK3DL2ADfg36GW8BmxPckGRvDKU",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01GFHQ24PW2WW18JZKT3sQtdeFMRHEr5s3t.output.variable_workflow_01GFID9BBB9G41U2hhRlo2K0hG5OaVBQP30$",
+              "variable_value_new": "$activity.definition_activity_01GFIBPTR4TK71J5ZE9MfL1B5z9sEtpPRRz.output.response_body$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GFIIKOFGFNY6uN1EPaRCVntMzc17IZYnC",
+        "name": "JSONPath Query",
+        "title": "Extract job ID",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Extract job ID",
+          "input_json": "$activity.definition_activity_01GFIBPTR4TK71J5ZE9MfL1B5z9sEtpPRRz.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.id",
+              "jsonpath_query_name": "Job_ID",
+              "jsonpath_query_type": "string"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GFIMP7WU9EN2e2arLEF13PltJpZjL7yoS",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "skip_execution": false,
+          "sleep_interval": 200
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GFIL3M6LOAR7SKsPjcvm9hrpQZbfYU5np",
+        "name": "Generic CCS API Request",
+        "title": "Generic CCS API Request",
+        "type": "ccs.api_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "api_call_method": "GET",
+          "continue_on_failure": true,
+          "display_name": "Generic CCS API Request",
+          "relative_url": "cloudcenter-ccm-backend//api/v2/jobs/$activity.definition_activity_01GFIIKOFGFNY6uN1EPaRCVntMzc17IZYnC.output.jsonpath_queries.Job_ID$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GFIM8OCTUGS4bZYnpFozOONldS6u4KOz2",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01GFHQ24PW2WW18JZKT3sQtdeFMRHEr5s3t.output.variable_workflow_01GFIM495SUMP36NcP41Vf6eRMcmUwFlOEU$",
+              "variable_value_new": "$activity.definition_activity_01GFIL3M6LOAR7SKsPjcvm9hrpQZbfYU5np.output.response_body$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb"
+    ]
+  },
+  "categories": {
+    "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb": {
+      "unique_name": "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb",
+      "name": "tercel",
+      "title": "tercel",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  }
+}
