@@ -1,0 +1,1377 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4",
+    "name": "SAML - PSC Automation WF",
+    "title": "SAML - PSC Automation WF",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "OP For SAML Certificate GET",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01GFHEOTELBXV0SoHpNZFtP9zMdWefLq0kL",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "vijkohli@cisco.com",
+          "scope": "input",
+          "name": "UpdateIDP-LoginID",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01CU2PQILAONW3lnXOIrmiJzZnVCpCqbNg1",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "User.LastName",
+          "scope": "input",
+          "name": "LastName",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01CU2BRKYYDWY5UtRjyKKEc6XGxkX7scz4s",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Metadata",
+          "scope": "input",
+          "name": "IDPName",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01CU2FPLTQH8Z0t7waOuRHVRWZ3kJN5NVnv",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "VijayKumar",
+          "scope": "input",
+          "name": "UpdateIDP-FirstName",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01CU2OJONR4773wD15iBpn37LaBFfXoUQ3F",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "vijkohli@cisco.com",
+          "scope": "input",
+          "name": "UpdateIDP-EmailID",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01CU2O6M41STD07zomnIgK8fwWu5eGnh4eJ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "CPSG",
+          "scope": "input",
+          "name": "UpdateIDP-organizationUnit",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01CU2Q2UPCO5F5YYvRB56pQiS5IRrvj5l8V",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "CVG",
+          "scope": "input",
+          "name": "organizationUnit",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01CU2D52FYV373Po6mOglnnZoIOMUNjhppu",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "OP For Update IDP",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01GFHDC1F1FNZ4H8ahFdrzwdukGl9II1IJn",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "OP For SAML Certificate PUT Disable",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01GFHF6IKRNB369QweWjGKCL5xBMO3Yr6hO",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "OP For SAML Certificate PUT Enabled",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01GFHEYXFYP8A6i25ZLKRy2f2fIypRqKkRA",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "OP For Get PUT IDP",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01GFHDI4W92SV6jPeWlqhyIYYADMTddaLv6",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "OP For Create IDP",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01FT9PRWSL4H73MUbIZx7nM9hNymntRdVZg",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "OP For Delete IDP",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01GFHE0YAZLD91j4EPtZ6ORPm6Vq0hU9FaE",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "vspancha",
+          "scope": "input",
+          "name": "LoginID",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01CU2CNGMIGPE0npDsybQ4VF4oHEjrI4B1R",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "OP For GET IDP",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01GFHC59GJSRR58qxFTu30pvd89e4pGJs6E",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "vspancha@cisco.com",
+          "scope": "input",
+          "name": "EmailID",
+          "type": "datatype.string",
+          "is_required": true
+        },
+        "unique_name": "variable_workflow_01CU2B70BLDSJ3v5EeUP5DCfWeri2v2mVW6",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Kohli",
+          "scope": "input",
+          "name": "UpdateIDP-LastName",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01CU2P8RWIMLR05DGH1IXF3u5AdRen2OctI",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "User.Firstname",
+          "scope": "input",
+          "name": "FirstName",
+          "type": "datatype.string",
+          "is_required": true
+        },
+        "unique_name": "variable_workflow_01CU2BHZ2MVCB4mBgH47C1CfDbcr4LOS5vm",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "SAML - PSC Automation WF",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01CRNB055VSDI1RC4QFWgo6bDbuTcG0fswh",
+        "name": "Group",
+        "title": "Creating IDP Record for SAML",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Creating IDP Record for SAML",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01CRN6ZURK1PS6U4L5bJiVkV2hs02JsjdPK",
+            "name": "HTTP Request",
+            "title": "Create IDP Record",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "accept": "application/json",
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "body": "{\n  \"name\": \"$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2FPLTQH8Z0t7waOuRHVRWZ3kJN5NVnv$\",\n  \"metadata\": \"\u003c?xml version=\\\"1.0\\\"?\u003e\\n\u003cEntityDescriptor xmlns=\\\"urn:oasis:names:tc:SAML:2.0:metadata\\\" entityID=\\\"https://app.onelogin.com/saml/metadata/655471\\\"\u003e\\n  \u003cIDPSSODescriptor xmlns:ds=\\\"http://www.w3.org/2000/09/xmldsig#\\\" protocolSupportEnumeration=\\\"urn:oasis:names:tc:SAML:2.0:protocol\\\"\u003e\\n    \u003cKeyDescriptor use=\\\"signing\\\"\u003e\\n      \u003cds:KeyInfo xmlns:ds=\\\"http://www.w3.org/2000/09/xmldsig#\\\"\u003e\\n        \u003cds:X509Data\u003e\\n          \u003cds:X509Certificate\u003eMIIEIzCCAwugAwIBAgIUFZeKpXTlJF3kJ/lzmIGmeMuTUB8wDQYJKoZIhvcNAQEF\\nBQAwXDELMAkGA1UEBhMCVVMxFDASBgNVBAoMC0Npc2NvX1ZpdmVrMRUwEwYDVQQL\\nDAxPbmVMb2dpbiBJZFAxIDAeBgNVBAMMF09uZUxvZ2luIEFjY291bnQgMTA2MTg3\\nMB4XDTE3MDUwNzEwMTUyOFoXDTIyMDUwODEwMTUyOFowXDELMAkGA1UEBhMCVVMx\\nFDASBgNVBAoMC0Npc2NvX1ZpdmVrMRUwEwYDVQQLDAxPbmVMb2dpbiBJZFAxIDAe\\nBgNVBAMMF09uZUxvZ2luIEFjY291bnQgMTA2MTg3MIIBIjANBgkqhkiG9w0BAQEF\\nAAOCAQ8AMIIBCgKCAQEAvxPHxsSgjG3wl+xvgYNgAIdi9dDE6yJTAl63UoW67kgo\\n1/BsY56Xd+Dul+LdyipUTGpU21v6zcNBXRGvGi5A7nGg5uUNpMwaGMTA0WJ0cegV\\n/aRgYlUWL/01Vf+ep+f9B3ELpoUOMHA01+1OG2LX+WvlfHsPMMJD5v2lxY0uhATf\\nDgLzTJox09LJfmadjtAuMgMa2D4Uf6NNWE5+DSXEv8aaZgsm/s8AkKrdUO++nNZD\\nWcBbIn3BrkkMz4LIYIduw8kbONfEjaRnXdleYvJrgQkAGFzp2sGAqb+R2ll0Xm5H\\neeG5Oe7naXjQHprlaQjLY/OYGk57d5JISuKN66Mw+wIDAQABo4HcMIHZMAwGA1Ud\\nEwEB/wQCMAAwHQYDVR0OBBYEFN2xMXzEdCLhADEtFEE8l+9ykU2TMIGZBgNVHSME\\ngZEwgY6AFN2xMXzEdCLhADEtFEE8l+9ykU2ToWCkXjBcMQswCQYDVQQGEwJVUzEU\\nMBIGA1UECgwLQ2lzY29fVml2ZWsxFTATBgNVBAsMDE9uZUxvZ2luIElkUDEgMB4G\\nA1UEAwwXT25lTG9naW4gQWNjb3VudCAxMDYxODeCFBWXiqV05SRd5Cf5c5iBpnjL\\nk1AfMA4GA1UdDwEB/wQEAwIHgDANBgkqhkiG9w0BAQUFAAOCAQEAOipv7wvG0PDl\\nyjix4+XtAOHvhsjcnXOow5l9xfTKqOIawyz7Gy6NIoR17gvqBoVjmxMK1nTlNRS4\\nhtQPMRzlX/ITt5rExDk4NT1cuhRaVd0rvgv6gvyj0gp/9Yjq+XH09JjR6Swc0Cgh\\nd+2lyoGMIwogPI6ZmfikcsbdkCjvTAvKWodihBciavcdgt+QGKb2TAtGaOpQwGL6\\nNFESz6snUtI8LLAWsqQOpns24oZhEEUdZq7ozouTDDilZwRYJBuwzI0FhM86RPgg\\njrKJ6FM9vODeCZQ7uLZWHCFCdB7hFX4uCyH9/v8xch3iT+mmzriJQyj1/DEgxqOf\\nK7VuhD4SGQ==\u003c/ds:X509Certificate\u003e\\n        \u003c/ds:X509Data\u003e\\n      \u003c/ds:KeyInfo\u003e\\n    \u003c/KeyDescriptor\u003e\\n    \u003cSingleLogoutService Binding=\\\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect\\\" Location=\\\"https://cisco-vivek.onelogin.com/trust/saml2/http-redirect/slo/655471\\\"/\u003e\\n    \\n      \u003cNameIDFormat\u003eurn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress\u003c/NameIDFormat\u003e\\n    \\n    \u003cSingleSignOnService Binding=\\\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect\\\" Location=\\\"https://cisco-vivek.onelogin.com/trust/saml2/http-redirect/sso/655471\\\"/\u003e\\n    \u003cSingleSignOnService Binding=\\\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST\\\" Location=\\\"https://cisco-vivek.onelogin.com/trust/saml2/http-post/sso/655471\\\"/\u003e\\n    \u003cSingleSignOnService Binding=\\\"urn:oasis:names:tc:SAML:2.0:bindings:SOAP\\\" Location=\\\"https://cisco-vivek.onelogin.com/trust/saml2/soap/sso/655471\\\"/\u003e\\n  \u003c/IDPSSODescriptor\u003e\\n\u003c/EntityDescriptor\u003e\",\n  \"attributesMapping\": {\n    \"email\": \"$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2B70BLDSJ3v5EeUP5DCfWeri2v2mVW6$\",\n    \"firstName\": \"$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2BHZ2MVCB4mBgH47C1CfDbcr4LOS5vm$\",\n    \"lastName\": \"$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2BRKYYDWY5UtRjyKKEc6XGxkX7scz4s$\",\n    \"login\": \"$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2CNGMIGPE0npDsybQ4VF4oHEjrI4B1R$\",\n    \"organizationUnit\": \"$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2D52FYV373Po6mOglnnZoIOMUNjhppu$\",\n    \"businessUnit\": \"User.FirstName\",\n    \"localeCode\": \"User.FirstName\",\n    \"costCenter\": \"User.FirstName\",\n    \"title\": \"User.FirstName\",\n    \"socialsecuritynumber\": \"User.FirstName\",\n    \"birthdate\": \"User.FirstName\",\n    \"hiredate\": \"User.FirstName\",\n    \"timezoneid\": \"User.LastName\",\n    \"employeecode\": \"User.LastName\",\n    \"notes\": \"User.LastName\",\n    \"companycode\": \"User.LastName\",\n    \"division\": \"User.LastName\",\n    \"departmentnumber\": \"User.LastName\",\n    \"managementlevel\": \"User.LastName\",\n    \"supervisorLogin\": \"User.LastName\",\n    \"supervisorFirstName\": \"User.LastName\",\n    \"supervisorLastName\": \"User.FirstName\",\n    \"supervisorEmail\": \"User.email\",\n    \"supervisorOrganizationUnit\": \"department\",\n    \"region\": \"User.LastName\",\n    \"employeetype\": \"User.LastName\",\n    \"locationcode\": \"User.LastName\",\n    \"custom1\": \"User.LastName\",\n    \"custom2\": \"User.LastName\",\n    \"custom3\": \"User.LastName\",\n    \"custom4\": \"User.LastName\",\n    \"custom5\": \"User.LastName\",\n    \"custom6\": \"User.LastName\",\n    \"custom7\": \"User.LastName\",\n    \"custom8\": \"User.LastName\",\n    \"custom9\": \"User.LastName\",\n    \"custom10\": \"User.LastName\",\n    \"companystreet1\": \"User.LastName\",\n    \"companystreet2\": \"User.LastName\",\n    \"companycity\": \"User.LastName\",\n    \"companystate\": \"User.LastName\",\n    \"companypostalcode\": \"User.LastName\",\n    \"companycountry\": \"User.LastName\",\n    \"officebuilding\": \"User.LastName\",\n    \"buildinglevel\": \"User.LastName\",\n    \"officelocation\": \"User.LastName\",\n    \"cubiclocation\": \"User.LastName\",\n    \"personalstreet1\": \"User.LastName\",\n    \"personalstreet2\": \"User.LastName\",\n    \"personalcity\": \"User.LastName\",\n    \"personalstate\": \"User.LastName\",\n    \"personalpostalcode\": \"User.LastName\",\n    \"personalcountry\": \"User.LastName\",\n    \"workphonenumber\": \"User.LastName\",\n    \"homephonenumber\": \"User.LastName\",\n    \"faxnumber\": \"User.LastName\",\n    \"mobilephonenumber\": \"User.LastName\",\n    \"pagernumber\": \"User.LastName\",\n    \"other\": \"User.LastName\",\n    \"mainphonenumber\": \"User.LastName\",\n    \"primaryphonenumber\": \"User.LastName\",\n    \"primaryfaxnumber\": \"User.LastName\",\n    \"salesphonenumber\": \"User.LastName\",\n    \"supportphonenumber\": \"User.LastName\",\n    \"billingphonenumber\": \"User.LastName\",\n    \"othercontactinfo\": \"User.LastName\",\n    \"ouList\": \"User.LastName::User.FirstName::User.email::department\",\n    \"groupList\": \"User.LastName::User.FirstName::User.email::department\",\n    \"roleList\": \"User.LastName::User.FirstName::User.email::department\"\n  }\n}",
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "display_name": "Create IDP Record",
+              "method": "POST",
+              "relative_url": "/nsapi/v1/idp/configs/",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01C9RJPV32N2B4lxuOZXqTabroIeP8MsG5H"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CRNRPM8R9VR1v6qjsYK8cwU1DqLWoOMXB",
+            "name": "Sleep",
+            "title": "Sleep",
+            "type": "core.sleep",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Sleep",
+              "skip_execution": false,
+              "sleep_interval": 2
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CRN82EIYKNN2j7H21ql6jnjRP0GddSlVT",
+            "name": "JSONPath Query",
+            "title": "IDP - Extraction ",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "IDP - Extraction ",
+              "input_json": "$activity.definition_activity_01CRN6ZURK1PS6U4L5bJiVkV2hs02JsjdPK.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$.code",
+                  "jsonpath_query_name": "Code",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$.value",
+                  "jsonpath_query_name": "Value",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CRN98JGY22O53NesPHxJrcXjNhkK1xfpv",
+            "name": "Find String",
+            "title": "Verify the response body- Code",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Verify the response body- Code",
+              "searched_string": "Success",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01CRN82EIYKNN2j7H21ql6jnjRP0GddSlVT.output.jsonpath_queries.Code$"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CRN9V78F7R42inmKMolxyN2JdyP9noh9J",
+            "name": "Find String",
+            "title": "Verify the response body- Value",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Verify the response body- Value",
+              "searched_string": "Successfully created IDP Configuration: Metadata. If SAML is enabled then, the IDP configurations would be available either after the next metadata refresh cycle or after the Refresh Metadata option is used.",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01CRN82EIYKNN2j7H21ql6jnjRP0GddSlVT.output.jsonpath_queries.Value$"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01FT9PH5YAIFJ5GlltkfME8eWIYrqFHzdDn",
+            "name": "Set Variables",
+            "title": "Set Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.output.variable_workflow_01FT9PRWSL4H73MUbIZx7nM9hNymntRdVZg$",
+                  "variable_value_new": "$activity.definition_activity_01CRN6ZURK1PS6U4L5bJiVkV2hs02JsjdPK.output.response_body$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01CRNKQLWONYR7UpZHuCuqXDGk9wJnGAqwK",
+        "name": "Group",
+        "title": "Get IDP Record Details- For POST IDP",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get IDP Record Details- For POST IDP",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01CRNL75L203H7aC8EGqkcMfP2l3E3LzJ5l",
+            "name": "HTTP Request",
+            "title": "Get IDP Records ",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "accept": "application/json",
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "display_name": "Get IDP Records ",
+              "method": "GET",
+              "relative_url": "/nsapi/v1/idp/configs/",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01C9RJPV32N2B4lxuOZXqTabroIeP8MsG5H"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01FT9Q4YTKDVC3AORl7bq8AYXE1NWNOWhkc",
+            "name": "Set Variables",
+            "title": "Set Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.output.variable_workflow_01GFHC59GJSRR58qxFTu30pvd89e4pGJs6E$",
+                  "variable_value_new": "$activity.definition_activity_01CRNL75L203H7aC8EGqkcMfP2l3E3LzJ5l.output.response_body$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CRNMMSPYQKG0F1u2IMWG8q3huInBGVuFz",
+            "name": "JSONPath Query",
+            "title": "Verify the IDP response body",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Verify the IDP response body",
+              "input_json": "$activity.definition_activity_01CRNL75L203H7aC8EGqkcMfP2l3E3LzJ5l.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..firstName",
+                  "jsonpath_query_name": "Fname",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..email",
+                  "jsonpath_query_name": "EmailID",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..login",
+                  "jsonpath_query_name": "LoginID",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..lastName",
+                  "jsonpath_query_name": "LastName",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..name",
+                  "jsonpath_query_name": "Name of the IDP",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CU29BY8RDRR2tyMsAG89fjL65p1jdWeTc",
+            "name": "Find String",
+            "title": "Verify the Response body-Email",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Verify the Response body-Email",
+              "searched_string": "$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2B70BLDSJ3v5EeUP5DCfWeri2v2mVW6$",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01CRNMMSPYQKG0F1u2IMWG8q3huInBGVuFz.output.jsonpath_queries.EmailID$"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CU2F2BCO2LZ4UV1oG6sfGoNSPVF2hrN0E",
+            "name": "Find String",
+            "title": "Verify the Response body-FirstName",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Verify the Response body-FirstName",
+              "searched_string": "$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2BHZ2MVCB4mBgH47C1CfDbcr4LOS5vm$",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01CRNMMSPYQKG0F1u2IMWG8q3huInBGVuFz.output.jsonpath_queries.Fname$"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CU2HD3CJTVA0eWPTuWk5sK3Whrb9TDJbl",
+            "name": "Find String",
+            "title": "Verify the Response body-IDPName",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Verify the Response body-IDPName",
+              "searched_string": "$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2FPLTQH8Z0t7waOuRHVRWZ3kJN5NVnv$",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01CRNMMSPYQKG0F1u2IMWG8q3huInBGVuFz.output.jsonpath_queries.Name of the IDP$"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CU2I1DY7QFR2TNzARTJTNCoYrkYdwkS9Z",
+            "name": "Find String",
+            "title": "Verify the Response body-LoginID",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Verify the Response body-LoginID",
+              "searched_string": "$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2CNGMIGPE0npDsybQ4VF4oHEjrI4B1R$",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01CRNMMSPYQKG0F1u2IMWG8q3huInBGVuFz.output.jsonpath_queries.LoginID$"
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01CRNBL6CA01M2pUoFWazDsCcmJJhwj45Gp",
+        "name": "Group",
+        "title": "Updating IDP Record for SAML",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Updating IDP Record for SAML",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01CRNBL8NMGZM2AhPGRTVSmIwDM3nMYadZ4",
+            "name": "HTTP Request",
+            "title": "Update IDP Record",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "accept": "application/json",
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "body": "{\n  \"name\": \"$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2FPLTQH8Z0t7waOuRHVRWZ3kJN5NVnv$\",\n  \"metadata\": \"\u003c?xml version=\\\"1.0\\\"?\u003e\\n\u003cEntityDescriptor xmlns=\\\"urn:oasis:names:tc:SAML:2.0:metadata\\\" entityID=\\\"https://app.onelogin.com/saml/metadata/655471\\\"\u003e\\n  \u003cIDPSSODescriptor xmlns:ds=\\\"http://www.w3.org/2000/09/xmldsig#\\\" protocolSupportEnumeration=\\\"urn:oasis:names:tc:SAML:2.0:protocol\\\"\u003e\\n    \u003cKeyDescriptor use=\\\"signing\\\"\u003e\\n      \u003cds:KeyInfo xmlns:ds=\\\"http://www.w3.org/2000/09/xmldsig#\\\"\u003e\\n        \u003cds:X509Data\u003e\\n          \u003cds:X509Certificate\u003eMIIEIzCCAwugAwIBAgIUFZeKpXTlJF3kJ/lzmIGmeMuTUB8wDQYJKoZIhvcNAQEF\\nBQAwXDELMAkGA1UEBhMCVVMxFDASBgNVBAoMC0Npc2NvX1ZpdmVrMRUwEwYDVQQL\\nDAxPbmVMb2dpbiBJZFAxIDAeBgNVBAMMF09uZUxvZ2luIEFjY291bnQgMTA2MTg3\\nMB4XDTE3MDUwNzEwMTUyOFoXDTIyMDUwODEwMTUyOFowXDELMAkGA1UEBhMCVVMx\\nFDASBgNVBAoMC0Npc2NvX1ZpdmVrMRUwEwYDVQQLDAxPbmVMb2dpbiBJZFAxIDAe\\nBgNVBAMMF09uZUxvZ2luIEFjY291bnQgMTA2MTg3MIIBIjANBgkqhkiG9w0BAQEF\\nAAOCAQ8AMIIBCgKCAQEAvxPHxsSgjG3wl+xvgYNgAIdi9dDE6yJTAl63UoW67kgo\\n1/BsY56Xd+Dul+LdyipUTGpU21v6zcNBXRGvGi5A7nGg5uUNpMwaGMTA0WJ0cegV\\n/aRgYlUWL/01Vf+ep+f9B3ELpoUOMHA01+1OG2LX+WvlfHsPMMJD5v2lxY0uhATf\\nDgLzTJox09LJfmadjtAuMgMa2D4Uf6NNWE5+DSXEv8aaZgsm/s8AkKrdUO++nNZD\\nWcBbIn3BrkkMz4LIYIduw8kbONfEjaRnXdleYvJrgQkAGFzp2sGAqb+R2ll0Xm5H\\neeG5Oe7naXjQHprlaQjLY/OYGk57d5JISuKN66Mw+wIDAQABo4HcMIHZMAwGA1Ud\\nEwEB/wQCMAAwHQYDVR0OBBYEFN2xMXzEdCLhADEtFEE8l+9ykU2TMIGZBgNVHSME\\ngZEwgY6AFN2xMXzEdCLhADEtFEE8l+9ykU2ToWCkXjBcMQswCQYDVQQGEwJVUzEU\\nMBIGA1UECgwLQ2lzY29fVml2ZWsxFTATBgNVBAsMDE9uZUxvZ2luIElkUDEgMB4G\\nA1UEAwwXT25lTG9naW4gQWNjb3VudCAxMDYxODeCFBWXiqV05SRd5Cf5c5iBpnjL\\nk1AfMA4GA1UdDwEB/wQEAwIHgDANBgkqhkiG9w0BAQUFAAOCAQEAOipv7wvG0PDl\\nyjix4+XtAOHvhsjcnXOow5l9xfTKqOIawyz7Gy6NIoR17gvqBoVjmxMK1nTlNRS4\\nhtQPMRzlX/ITt5rExDk4NT1cuhRaVd0rvgv6gvyj0gp/9Yjq+XH09JjR6Swc0Cgh\\nd+2lyoGMIwogPI6ZmfikcsbdkCjvTAvKWodihBciavcdgt+QGKb2TAtGaOpQwGL6\\nNFESz6snUtI8LLAWsqQOpns24oZhEEUdZq7ozouTDDilZwRYJBuwzI0FhM86RPgg\\njrKJ6FM9vODeCZQ7uLZWHCFCdB7hFX4uCyH9/v8xch3iT+mmzriJQyj1/DEgxqOf\\nK7VuhD4SGQ==\u003c/ds:X509Certificate\u003e\\n        \u003c/ds:X509Data\u003e\\n      \u003c/ds:KeyInfo\u003e\\n    \u003c/KeyDescriptor\u003e\\n    \u003cSingleLogoutService Binding=\\\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect\\\" Location=\\\"https://cisco-vivek.onelogin.com/trust/saml2/http-redirect/slo/655471\\\"/\u003e\\n    \\n      \u003cNameIDFormat\u003eurn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress\u003c/NameIDFormat\u003e\\n    \\n    \u003cSingleSignOnService Binding=\\\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect\\\" Location=\\\"https://cisco-vivek.onelogin.com/trust/saml2/http-redirect/sso/655471\\\"/\u003e\\n    \u003cSingleSignOnService Binding=\\\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST\\\" Location=\\\"https://cisco-vivek.onelogin.com/trust/saml2/http-post/sso/655471\\\"/\u003e\\n    \u003cSingleSignOnService Binding=\\\"urn:oasis:names:tc:SAML:2.0:bindings:SOAP\\\" Location=\\\"https://cisco-vivek.onelogin.com/trust/saml2/soap/sso/655471\\\"/\u003e\\n  \u003c/IDPSSODescriptor\u003e\\n\u003c/EntityDescriptor\u003e\",\n  \"attributesMapping\": {\n    \"email\": \"$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2O6M41STD07zomnIgK8fwWu5eGnh4eJ$\",\n    \"firstName\": \"$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2OJONR4773wD15iBpn37LaBFfXoUQ3F$\",\n    \"lastName\": \"$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2P8RWIMLR05DGH1IXF3u5AdRen2OctI$\",\n    \"login\": \"$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2PQILAONW3lnXOIrmiJzZnVCpCqbNg1$\",\n    \"organizationUnit\": \"$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2Q2UPCO5F5YYvRB56pQiS5IRrvj5l8V$\",\n    \"businessUnit\": \"CPSG\",\n    \"localeCode\": \"User.FirstName\",\n    \"costCenter\": \"User.FirstName\",\n    \"title\": \"User.FirstName\",\n    \"socialsecuritynumber\": \"User.FirstName\",\n    \"birthdate\": \"User.FirstName\",\n    \"hiredate\": \"User.FirstName\",\n    \"timezoneid\": \"User.LastName\",\n    \"employeecode\": \"User.LastName\",\n    \"notes\": \"User.LastName\",\n    \"companycode\": \"User.LastName\",\n    \"division\": \"User.LastName\",\n    \"departmentnumber\": \"User.LastName\",\n    \"managementlevel\": \"User.LastName\",\n    \"supervisorLogin\": \"User.LastName\",\n    \"supervisorFirstName\": \"User.LastName\",\n    \"supervisorLastName\": \"User.FirstName\",\n    \"supervisorEmail\": \"User.email\",\n    \"supervisorOrganizationUnit\": \"department\",\n    \"region\": \"User.LastName\",\n    \"employeetype\": \"User.LastName\",\n    \"locationcode\": \"User.LastName\",\n    \"custom1\": \"User.LastName\",\n    \"custom2\": \"User.LastName\",\n    \"custom3\": \"User.LastName\",\n    \"custom4\": \"User.LastName\",\n    \"custom5\": \"User.LastName\",\n    \"custom6\": \"User.LastName\",\n    \"custom7\": \"User.LastName\",\n    \"custom8\": \"User.LastName\",\n    \"custom9\": \"User.LastName\",\n    \"custom10\": \"User.LastName\",\n    \"companystreet1\": \"User.LastName\",\n    \"companystreet2\": \"User.LastName\",\n    \"companycity\": \"User.LastName\",\n    \"companystate\": \"User.LastName\",\n    \"companypostalcode\": \"User.LastName\",\n    \"companycountry\": \"User.LastName\",\n    \"officebuilding\": \"User.LastName\",\n    \"buildinglevel\": \"User.LastName\",\n    \"officelocation\": \"User.LastName\",\n    \"cubiclocation\": \"User.LastName\",\n    \"personalstreet1\": \"User.LastName\",\n    \"personalstreet2\": \"User.LastName\",\n    \"personalcity\": \"User.LastName\",\n    \"personalstate\": \"User.LastName\",\n    \"personalpostalcode\": \"User.LastName\",\n    \"personalcountry\": \"User.LastName\",\n    \"workphonenumber\": \"User.LastName\",\n    \"homephonenumber\": \"User.LastName\",\n    \"faxnumber\": \"User.LastName\",\n    \"mobilephonenumber\": \"User.LastName\",\n    \"pagernumber\": \"User.LastName\",\n    \"other\": \"User.LastName\",\n    \"mainphonenumber\": \"User.LastName\",\n    \"primaryphonenumber\": \"User.LastName\",\n    \"primaryfaxnumber\": \"User.LastName\",\n    \"salesphonenumber\": \"User.LastName\",\n    \"supportphonenumber\": \"User.LastName\",\n    \"billingphonenumber\": \"User.LastName\",\n    \"othercontactinfo\": \"User.LastName\",\n    \"ouList\": \"User.LastName::User.FirstName::User.email::department\",\n    \"groupList\": \"User.LastName::User.FirstName::User.email::department\",\n    \"roleList\": \"User.LastName::User.FirstName::User.email::department\"\n  }\n}",
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "display_name": "Update IDP Record",
+              "method": "PUT",
+              "relative_url": "/nsapi/v1/idp/configs/",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01C9RJPV32N2B4lxuOZXqTabroIeP8MsG5H"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CRNRTR0UQ720IQeudOkqUOUYyTz9jVkch",
+            "name": "Sleep",
+            "title": "Sleep",
+            "type": "core.sleep",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Sleep",
+              "skip_execution": false,
+              "sleep_interval": 2
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01FT9RBIE14HP2KM70n37R9UAuh541xzLUB",
+            "name": "Set Variables",
+            "title": "Set Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.output.variable_workflow_01GFHDC1F1FNZ4H8ahFdrzwdukGl9II1IJn$",
+                  "variable_value_new": "$activity.definition_activity_01CRNBL8NMGZM2AhPGRTVSmIwDM3nMYadZ4.output.response_body$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CRNBL9NJU4160kFIhQ1KzOeYTKTVfDqKa",
+            "name": "JSONPath Query",
+            "title": "Verify the update response body",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Verify the update response body",
+              "input_json": "$activity.definition_activity_01CRNBL8NMGZM2AhPGRTVSmIwDM3nMYadZ4.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$.code",
+                  "jsonpath_query_name": "Code",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$.value",
+                  "jsonpath_query_name": "Value",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$.localizedMessage",
+                  "jsonpath_query_name": "localizedMessage",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CRNBLAP49PD4PBdz2gicm7vpHj7c0e6rb",
+            "name": "Find String",
+            "title": "Verify the response body- Code",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Verify the response body- Code",
+              "searched_string": "Success",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01CRNBL9NJU4160kFIhQ1KzOeYTKTVfDqKa.output.jsonpath_queries.Code$"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CRNBLBSE0123T5WVXDulsEVgfFx8SviOF",
+            "name": "Find String",
+            "title": "Verify the response body- Value",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Verify the response body- Value",
+              "searched_string": "Successfully updated IDP Configuration: Metadata. If SAML is enabled then, the IDP configurations changes (if any) would be available either after the next metadata refresh cycle or after Refresh Metadata option is used",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01CRNBL9NJU4160kFIhQ1KzOeYTKTVfDqKa.output.jsonpath_queries.Value$"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CU1YEJVCN1L12b99xvf4Rke95GT8mcer9",
+            "name": "Find String",
+            "title": "Verify the response body- LocalizedMessage",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Verify the response body- LocalizedMessage",
+              "searched_string": "Successfully updated IDP Configuration. If SAML is enabled then, the IDP configurations changes (if any) would be available either after the next metadata refresh cycle or after the Refresh Metadata option is used.",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01CRNBL9NJU4160kFIhQ1KzOeYTKTVfDqKa.output.jsonpath_queries.localizedMessage$"
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01CU2MOEDL0Y9147TxL0UGpyqepbN2nKbFS",
+        "name": "Group",
+        "title": "Get IDP Record Details- For PUT IDP",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get IDP Record Details- For PUT IDP",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01CU2MOHGO78P71BaVQX7LamiP9FPqzCVSg",
+            "name": "HTTP Request",
+            "title": "Get IDP Records ",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "accept": "application/json",
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "display_name": "Get IDP Records ",
+              "method": "GET",
+              "relative_url": "/nsapi/v1/idp/configs/",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01C9RJPV32N2B4lxuOZXqTabroIeP8MsG5H"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01FT9QGDVLD4E0po2GeYakp3gEntH6bxP2z",
+            "name": "Set Variables",
+            "title": "Set Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.output.variable_workflow_01GFHDI4W92SV6jPeWlqhyIYYADMTddaLv6$",
+                  "variable_value_new": "$activity.definition_activity_01CU2MOHGO78P71BaVQX7LamiP9FPqzCVSg.output.response_body$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CU2MOIQRN2X4zbAE0ZiY9eWIgcNtPL5u7",
+            "name": "JSONPath Query",
+            "title": "Verify the IDP response body",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Verify the IDP response body",
+              "input_json": "$activity.definition_activity_01CU2MOHGO78P71BaVQX7LamiP9FPqzCVSg.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..firstName",
+                  "jsonpath_query_name": "Fname",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..email",
+                  "jsonpath_query_name": "EmailID",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..login",
+                  "jsonpath_query_name": "LoginID",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..lastName",
+                  "jsonpath_query_name": "LastName",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$..name",
+                  "jsonpath_query_name": "Name of the IDP",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CU2MOK6VWSZ0mPmSHnOE7aw8PLduXn2F0",
+            "name": "Find String",
+            "title": "Verify the Response body-Email",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Verify the Response body-Email",
+              "searched_string": "$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2O6M41STD07zomnIgK8fwWu5eGnh4eJ$",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01CU2MOIQRN2X4zbAE0ZiY9eWIgcNtPL5u7.output.jsonpath_queries.EmailID$"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CU2MOL6T5J34TNPSfm0BVDXUvxycLfXLf",
+            "name": "Find String",
+            "title": "Verify the Response body-FirstName",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Verify the Response body-FirstName",
+              "searched_string": "$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2OJONR4773wD15iBpn37LaBFfXoUQ3F$",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01CU2MOIQRN2X4zbAE0ZiY9eWIgcNtPL5u7.output.jsonpath_queries.Fname$"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CU2MOM6ZYST0nzAX8Qv7p14HQEKKhP1uv",
+            "name": "Find String",
+            "title": "Verify the Response body-IDPName",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Verify the Response body-IDPName",
+              "searched_string": "$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2FPLTQH8Z0t7waOuRHVRWZ3kJN5NVnv$",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01CU2MOIQRN2X4zbAE0ZiY9eWIgcNtPL5u7.output.jsonpath_queries.Name of the IDP$"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CU2MON8LQUE04QqCNaKy116VaDPG2dnk5",
+            "name": "Find String",
+            "title": "Verify the Response body-LoginID",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Verify the Response body-LoginID",
+              "searched_string": "$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.input.variable_workflow_01CU2PQILAONW3lnXOIrmiJzZnVCpCqbNg1$",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01CU2MOIQRN2X4zbAE0ZiY9eWIgcNtPL5u7.output.jsonpath_queries.LoginID$"
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01CRNGWCB851O2AaLFMCqAz94yOtjM0VCQi",
+        "name": "Group",
+        "title": "Get SAML Certificate Details ",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get SAML Certificate Details ",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01CRNGWEO8D6O5achqeeDjwSacxlzecPL27",
+            "name": "HTTP Request",
+            "title": "Get SAML Certificate Details ",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "accept": "application/json",
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "display_name": "Get SAML Certificate Details ",
+              "method": "GET",
+              "relative_url": "/nsapi/v1/saml/configs",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01C9RJPV32N2B4lxuOZXqTabroIeP8MsG5H"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01FT9RRR4SSR836Z3IHIX5chaU1H1qmLhUD",
+            "name": "Set Variables",
+            "title": "Set Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.output.variable_workflow_01GFHEOTELBXV0SoHpNZFtP9zMdWefLq0kL$",
+                  "variable_value_new": "$activity.definition_activity_01CRNGWEO8D6O5achqeeDjwSacxlzecPL27.output.response_body$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CRNGWFLTKVV17zBlihLyMU3v55apdQOWH",
+            "name": "JSONPath Query",
+            "title": "Certificate Extraction",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Certificate Extraction",
+              "input_json": "$activity.definition_activity_01CRNGWEO8D6O5achqeeDjwSacxlzecPL27.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$.b64PrivateKey",
+                  "jsonpath_query_name": "PrivateKey",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$.entityID",
+                  "jsonpath_query_name": "Entity ID",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CRNGWGO42BA0QUBA00tzCcZOMWipvomJd",
+            "name": "Find String",
+            "title": "Verify the response body- PrivateKey",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Verify the response body- PrivateKey",
+              "searched_string": "----- Private key goes here -----",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01CRNGWFLTKVV17zBlihLyMU3v55apdQOWH.output.jsonpath_queries.PrivateKey$"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CRNGWHOI8AF4QOnug1wjpE8w5neXdMBcy",
+            "name": "Find String",
+            "title": "Verify the response body- Entity ID",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Verify the response body- Entity ID",
+              "searched_string": "urn:cisco:rc:saml:default",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01CRNGWFLTKVV17zBlihLyMU3v55apdQOWH.output.jsonpath_queries.Entity ID$"
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01CU1TWPP3Z4F4AgjG6qxGZM0hTTzEqdqeC",
+        "name": "Group",
+        "title": "Delete IDP Record",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Delete IDP Record",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01CRNO86HFHOH6JJWgNUVaGs87WAuW0klYF",
+            "name": "HTTP Request",
+            "title": "Delete IDP Record",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "display_name": "Delete IDP Record",
+              "method": "DELETE",
+              "relative_url": "/nsapi/v1/idp/configs/$activity.definition_activity_01CRNMMSPYQKG0F1u2IMWG8q3huInBGVuFz.output.jsonpath_queries.Name of the IDP$",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01C9RJPV32N2B4lxuOZXqTabroIeP8MsG5H"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01FT9S4YB6SSC60ZvGhdaneLmAlPNae7wwb",
+            "name": "Set Variables",
+            "title": "Set Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.output.variable_workflow_01GFHE0YAZLD91j4EPtZ6ORPm6Vq0hU9FaE$",
+                  "variable_value_new": "$activity.definition_activity_01CRNO86HFHOH6JJWgNUVaGs87WAuW0klYF.output.response_body$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CRNPPFTYU274u9eYHEKTB3QotlXNCK8U1",
+            "name": "JSONPath Query",
+            "title": "JSONPath Query",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "JSONPath Query",
+              "input_json": "$activity.definition_activity_01CRNO86HFHOH6JJWgNUVaGs87WAuW0klYF.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$.code",
+                  "jsonpath_query_name": "Code",
+                  "jsonpath_query_type": "string"
+                },
+                {
+                  "jsonpath_query": "$.value",
+                  "jsonpath_query_name": "Value",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CRNQGFAJEO209mdZNQB4EExsY9OOimYNK",
+            "name": "Find String",
+            "title": "Verify the Sucess of deletion",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Verify the Sucess of deletion",
+              "searched_string": "Success",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01CRNPPFTYU274u9eYHEKTB3QotlXNCK8U1.output.jsonpath_queries.Code$"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CRNQSX6H9MI39dYtQYH4J4bnsxmbwvrlH",
+            "name": "Find String",
+            "title": "Verify the Message",
+            "type": "core.find_string",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Verify the Message",
+              "searched_string": "Successfully deleted IDP Configuration: Metadata. If SAML is enabled then, the IDP configuration deleted would be cleared from the cache either after the next metadata refresh cycle or after the Refresh Metadata option is used.",
+              "skip_execution": false,
+              "source": "$activity.definition_activity_01CRNPPFTYU274u9eYHEKTB3QotlXNCK8U1.output.jsonpath_queries.Value$"
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01CU203UB6NX47FGDcWDICYKY95J0cwwOLX",
+        "name": "Group",
+        "title": "View SAML Settings, Enable and Disbale",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "View SAML Settings, Enable and Disbale",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01CU20CBK6D0V2DWwTlIC3TDMc9OlI5GeDE",
+            "name": "HTTP Request",
+            "title": "SAML Settings View ",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "accept": "application/json",
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "display_name": "SAML Settings View ",
+              "method": "GET",
+              "relative_url": "/nsapi/ucsd/sso",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01C9RJPV32N2B4lxuOZXqTabroIeP8MsG5H"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01FT9S9RSYVQO7b7cM3MTpXOq8FMsEPFnqU",
+            "name": "Set Variables",
+            "title": "Set Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.output.variable_workflow_01GFHEOTELBXV0SoHpNZFtP9zMdWefLq0kL$",
+                  "variable_value_new": "$activity.definition_activity_01CU20CBK6D0V2DWwTlIC3TDMc9OlI5GeDE.output.response_body$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CU219BLUS1I6h4gJQBMfFMbsUxl22lHVa",
+            "name": "HTTP Request",
+            "title": "Enable SAML on PSC",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "accept": "application/json",
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "body": "{\n\t\"Map\": {\n\t\t\"mode\": \"SAML\",\n\t\t\"enable\": true,\n\t\t\"enableSAMLApiAuthentication\": true,\n\t\t\"enableCreatedSource\": true\n\t}\n}",
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "display_name": "Enable SAML on PSC",
+              "method": "POST",
+              "relative_url": "/nsapi/ucsd/sso",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01C9RJPV32N2B4lxuOZXqTabroIeP8MsG5H"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CU222KPHLS137MTjunmOvXsRU9GTrthsn",
+            "name": "HTTP Request",
+            "title": "SAML Settings View ",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "accept": "application/json",
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "display_name": "SAML Settings View ",
+              "method": "GET",
+              "relative_url": "/nsapi/ucsd/sso",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01C9RJPV32N2B4lxuOZXqTabroIeP8MsG5H"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01FT9SFRAB18O1LhEsP4pkydg3NcjMFKSAE",
+            "name": "Set Variables",
+            "title": "Set Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.output.variable_workflow_01GFHEYXFYP8A6i25ZLKRy2f2fIypRqKkRA$",
+                  "variable_value_new": "$activity.definition_activity_01CU222KPHLS137MTjunmOvXsRU9GTrthsn.output.response_body$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CU22C58S16E6mrpEJz8HwpSyuRsjcvozD",
+            "name": "HTTP Request",
+            "title": "Diable SAML on PSC",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "accept": "application/json",
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "body": "{\n\t\"Map\": {\n\t\t\"mode\": \"SAML\",\n\t\t\"enable\": false,\n\t\t\"enableSAMLApiAuthentication\": false,\n\t\t\"enableCreatedSource\": false\n\t}\n}",
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "display_name": "Diable SAML on PSC",
+              "method": "POST",
+              "relative_url": "/nsapi/ucsd/sso",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01C9RJPV32N2B4lxuOZXqTabroIeP8MsG5H"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CU22UG1WFBU7aC4MMoO14gLcDh5OhdQx4",
+            "name": "HTTP Request",
+            "title": "SAML Settings View ",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "accept": "application/json",
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "display_name": "SAML Settings View ",
+              "method": "GET",
+              "relative_url": "/nsapi/ucsd/sso",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01C9RJPV32N2B4lxuOZXqTabroIeP8MsG5H"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01FT9SMAXL3EW4TqbCqwkuY17NA0Na7TCSl",
+            "name": "Set Variables",
+            "title": "Set Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01CRN6LZTA54O4wZ2v7rizXQZizAbzGAeS4.output.variable_workflow_01GFHF6IKRNB369QweWjGKCL5xBMO3Yr6hO$",
+                  "variable_value_new": "$activity.definition_activity_01CU22UG1WFBU7aC4MMoO14gLcDh5OhdQx4.output.response_body$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb"
+    ]
+  },
+  "categories": {
+    "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb": {
+      "unique_name": "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb",
+      "name": "tercel",
+      "title": "tercel",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_01C9RJPV32N2B4lxuOZXqTabroIeP8MsG5H": {
+      "unique_name": "definition_target_01C9RJPV32N2B4lxuOZXqTabroIeP8MsG5H",
+      "name": "PSC_AutomationTarget",
+      "title": "PSC_AutomationTarget",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01B6KJT73DS3O4U4Rny33OW7ZJEnNqiyuB3",
+        "disable_certificate_validation": true,
+        "display_name": "PSC_AutomationTarget",
+        "host": "172.21.37.22",
+        "ignore_proxy": false,
+        "no_runtime_user": false,
+        "path": "RequestCenter",
+        "port": 8080,
+        "protocol": "http"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01B6KJT73DS3O4U4Rny33OW7ZJEnNqiyuB3": {
+      "unique_name": "definition_runtime_user_01B6KJT73DS3O4U4Rny33OW7ZJEnNqiyuB3",
+      "name": "PSC",
+      "title": "PSC",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "auth_option": "*****",
+        "basic_password": "*****",
+        "basic_username": "*****",
+        "display_name": "PSC"
+      }
+    }
+  }
+}
