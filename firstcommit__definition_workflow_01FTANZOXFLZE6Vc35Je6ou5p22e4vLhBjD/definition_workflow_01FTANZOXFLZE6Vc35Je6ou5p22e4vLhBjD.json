@@ -1,0 +1,246 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01FTANZOXFLZE6Vc35Je6ou5p22e4vLhBjD",
+    "name": "FailedConditioncheckforTercel",
+    "title": "FailedConditioncheckforTercel",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "OP",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01FTAOQWFMU8H6vRy0KYKLiNMoC11muokbO",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "op2",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01FTBBDSNC8IC2nxawW4WLMPiVhwcykaJG2",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "op3",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01FTBBI0U97NQ4wKlGDdE0Z79j7jQ95IIaT",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "op5",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01FTBBMBS43Q30Bu7zVNOib6FSp7OZC3amH",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "op6",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01FTBBURHYJSW1MOYi8mMe4AFNUnu2WxnM9",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "op1",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01G61ZUQDK27I4QWrF8NFY44qOcj4HO6h8A",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "FailedConditioncheckforTercel",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01FTAO2DQIHW43vqfEqB1XGeJV3K6utxwMg",
+        "name": "Completed",
+        "title": "Completed",
+        "type": "logic.completed",
+        "base_type": "activity",
+        "properties": {
+          "completion_type": "failed-completed",
+          "continue_on_failure": true,
+          "display_name": "Completed",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01FTAO7YP09K12Pmkh9K2njgVvAYECClePl",
+        "name": "Set Variables",
+        "title": "Capture Error Message ",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Capture Error Message ",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01FTANZOXFLZE6Vc35Je6ou5p22e4vLhBjD.output.variable_workflow_01FTAOQWFMU8H6vRy0KYKLiNMoC11muokbO$",
+              "variable_value_new": "$activity.definition_activity_01FTAO2DQIHW43vqfEqB1XGeJV3K6utxwMg.output.error.message$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01FTAOZZ12NPH6mfafmIWUlBlzgOQGzQIIQ",
+        "name": "Set Variables",
+        "title": "Capture Error Code",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Capture Error Code",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01FTANZOXFLZE6Vc35Je6ou5p22e4vLhBjD.output.variable_workflow_01G61ZUQDK27I4QWrF8NFY44qOcj4HO6h8A$",
+              "variable_value_new": "$activity.definition_activity_01FTAO2DQIHW43vqfEqB1XGeJV3K6utxwMg.output.error.code$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01FTAP6YUZI3P1j30oH0PIvWssj0xl7nNCK",
+        "name": "Set Variables",
+        "title": "Capture Error Total Time ",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Capture Error Total Time ",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01FTANZOXFLZE6Vc35Je6ou5p22e4vLhBjD.output.variable_workflow_01FTBBDSNC8IC2nxawW4WLMPiVhwcykaJG2$",
+              "variable_value_new": "$activity.definition_activity_01FTAO2DQIHW43vqfEqB1XGeJV3K6utxwMg.output.elapsed_time$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01FTAPC492YSN5Vr4VLae2HOdWqYqipvWSY",
+        "name": "Set Variables",
+        "title": "Capture Error EndTime",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Capture Error EndTime",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01FTANZOXFLZE6Vc35Je6ou5p22e4vLhBjD.output.variable_workflow_01FTBBI0U97NQ4wKlGDdE0Z79j7jQ95IIaT$",
+              "variable_value_new": "$activity.definition_activity_01FTAO2DQIHW43vqfEqB1XGeJV3K6utxwMg.output.end_time$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01FTAPH5AAT860HagrzwLMhEuacRgR3GTHs",
+        "name": "Set Variables",
+        "title": "Capture Error StartTime",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Capture Error StartTime",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01FTANZOXFLZE6Vc35Je6ou5p22e4vLhBjD.output.variable_workflow_01FTBBMBS43Q30Bu7zVNOib6FSp7OZC3amH$",
+              "variable_value_new": "$activity.definition_activity_01FTAO2DQIHW43vqfEqB1XGeJV3K6utxwMg.output.start_time$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01FTAPN8PMJIN70nma68sRwZ2TziF8FkBJ6",
+        "name": "Set Variables",
+        "title": "Capture Boolean",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Capture Boolean",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01FTANZOXFLZE6Vc35Je6ou5p22e4vLhBjD.output.variable_workflow_01FTBBURHYJSW1MOYi8mMe4AFNUnu2WxnM9$",
+              "variable_value_new": "$activity.definition_activity_01FTAO2DQIHW43vqfEqB1XGeJV3K6utxwMg.output.succeeded$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb"
+    ]
+  },
+  "categories": {
+    "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb": {
+      "unique_name": "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb",
+      "name": "tercel",
+      "title": "tercel",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  }
+}
