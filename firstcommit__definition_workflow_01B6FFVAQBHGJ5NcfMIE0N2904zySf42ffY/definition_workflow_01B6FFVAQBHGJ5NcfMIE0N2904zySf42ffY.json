@@ -1,0 +1,2988 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY",
+    "name": "MSWindows_Automation Vinay",
+    "title": "MSWindows_Automation Vinay",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "C:\\PWS\\",
+          "scope": "input",
+          "name": "WorkingDirectory",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01B6HUY7LJOFT6g9Gh5uwZkYGof4uOAw473",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "AODIR",
+          "scope": "input",
+          "name": "DirectoryName for Mkdir",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01B6HVUZUZZ086p7tFvfoaYrlXFlF6GYYlS",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "C:\\PWS\\folderandDir\\",
+          "scope": "input",
+          "name": "Directorypath",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01BA2P17YUOWZ4OcoF8Q2H5chPS8qpPMvFE",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "All Action Results True/False",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01CT5LSN8D6DD5rdTryOL1JRSXpvRgfdb7V",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Table Email",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01CT5M5LLSCRF5kuMlVRlcPrGAjbEs0Bg8h",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": "this wf",
+      "display_name": "MSWindows_Automation Vinay",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "no_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01B6HOV6QICTH3xEtDPGZtGU366MRjTQr0W",
+        "name": "Parallel Block",
+        "title": "Parallel Block- Execute Action Block- Execute Scripts",
+        "type": "logic.parallel",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "description": "This Block Contains Powershell/WIndows and Command Scripts which is having single line script and also from the remote file.",
+          "display_name": "Parallel Block- Execute Action Block- Execute Scripts",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01B6HOV9G9F175IoMgQb5lS2RVJzSccYPV8",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch- Positive Case",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch- Positive Case",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01B6HPC4Y4CXJ64ZxjhbBxSh6dPodnZ67GZ",
+                "name": "Execute Powershell Script",
+                "title": "Execute Powershell Script",
+                "type": "windows.execute_powershell_script",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "description": "Passing the Script directly from the AO Workflow ",
+                  "display_name": "Execute Powershell Script",
+                  "execute_remote_file": false,
+                  "powershell_script": "Get-Service | Where-Object {$_.Status -eq \"Running\"}",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01B6HPEW6JL4M6fA3ktM3x3P3BfxmRM1pg6",
+                "name": "Execute Command",
+                "title": "Execute Command",
+                "type": "windows.execute_command",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "command": "dir C:\\",
+                  "continue_on_failure": true,
+                  "description": "Passing the Script directly from the AO Workflow ",
+                  "display_name": "Execute Command",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01B6FFWR69GGY6F42kCgRc05KrJ9Seva62Q",
+                "name": "Execute Windows Script",
+                "title": "Execute Windows Script",
+                "type": "windows.execute_windows_script",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "description": "Passing the Script directly from the AO Workflow ",
+                  "display_name": "Execute Windows Script",
+                  "execute_remote_file": false,
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  },
+                  "windows_script": "Set objShell = CreateObject(\"WScript.Shell\")\nSet exec = objShell.Exec(\"ipconfig /all\")\nCall WScript.StdOut.Write(exec.StdOut.ReadAll)"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BIDGERYBSJ32NJspe65V2MnWbIC90hUUh",
+                "name": "Execute Windows Script",
+                "title": "Execute Windows Script",
+                "type": "windows.execute_windows_script",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "description": "Passing the Script directly from the AO Workflow  with argumanets",
+                  "display_name": "Execute Windows Script",
+                  "execute_remote_file": false,
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "script_arguments": [
+                    "C:/PWS"
+                  ],
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  },
+                  "windows_script": "On Error Resume Next\nDim fso, folder, files, NewsFile,sFolder\n\nSet fso = CreateObject(\"Scripting.FileSystemObject\")\nsFolder = Wscript.Arguments.Item(0)\nIf sFolder = \"\" Then\nWscript.Echo \"No Folder parameter was passed\"\nWscript.Quit\nEnd If\nSet NewFile = fso.CreateTextFile(sFolder\u0026\"\\FileList.txt\", True)\nSet folder = fso.GetFolder(sFolder)\nSet files = folder.Files\n\nFor each folderIdx In files\nNewFile.WriteLine(folderIdx.Name)\nNext\nNewFile.Close"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BYJRXRVDYVI62VJVVwCuWyhgU2r8O5gVA",
+                "name": "Execute Windows Script",
+                "title": "Execute Windows Script",
+                "type": "windows.execute_windows_script",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "description": "Passing the Script directly from the AO Workflow  with argumanets",
+                  "display_name": "Execute Windows Script",
+                  "execute_remote_file": true,
+                  "remote_file": "2.vbs",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "script_arguments": [
+                    "C:/PWS"
+                  ],
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  },
+                  "working_directory": "C:/PWS/"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01C6NS5NND83W5SWiwBSZEVSVNR5UAOyTeq",
+                "name": "Execute Windows Script",
+                "title": "Execute Windows Script",
+                "type": "windows.execute_windows_script",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "description": "Passing the Script directly from the AO Workflow  with argumanets",
+                  "display_name": "Execute Windows Script",
+                  "execute_remote_file": true,
+                  "remote_file": "2.vbs",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  },
+                  "working_directory": "C:/PWS/"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01B6HOVAISKI22MIHdol6aJxXMcVKlptVNP",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch-Positive Case",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch-Positive Case",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01B6FFW53665F3ZTeu6GieXbGm9HisRekOs",
+                "name": "Execute Powershell Script",
+                "title": "Execute Powershell Script",
+                "type": "windows.execute_powershell_script",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "description": "Passing the Script from the remote file ",
+                  "display_name": "Execute Powershell Script",
+                  "execute_remote_file": true,
+                  "remote_file": "test.ps1",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  },
+                  "working_directory": "$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.input.variable_workflow_01B6HUY7LJOFT6g9Gh5uwZkYGof4uOAw473$"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BIF2LAI0IMU71ZRszzUoubmNebNbORjjZ",
+                "name": "Execute Powershell Script",
+                "title": "Execute Powershell Script",
+                "type": "windows.execute_powershell_script",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "description": "Passing the Script directly from the AO Workflow with arguments",
+                  "display_name": "Execute Powershell Script",
+                  "execute_remote_file": false,
+                  "powershell_script": "param([string] $dir = \"C:\\Temp\",\n[int32] $size = 20000)\n$files = Get-ChildItem $dir\nforeach ($file in $files)\n{\nif ($file.length -gt $size)\n{\nWrite-Output $file\n}\n}",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "script_arguments": [
+                    "C:\\windows 20000"
+                  ],
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "override_workflow_target_group_criteria": false,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV",
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01B6FFWGLCRBV3cAKRgK703ZK7YWJYurZfH",
+                "name": "Execute Command",
+                "title": "Execute Command",
+                "type": "windows.execute_command",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "command": "mkdir $workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.input.variable_workflow_01BA2P17YUOWZ4OcoF8Q2H5chPS8qpPMvFE$\\$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.input.variable_workflow_01B6HVUZUZZ086p7tFvfoaYrlXFlF6GYYlS$-$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.output.instance_id$",
+                  "continue_on_failure": true,
+                  "description": "Execute the command from the input parameters ",
+                  "display_name": "Execute Command",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01B6HPG89DLYC5Yy2Hqoqz6ThPjAMrrBwMs",
+                "name": "Execute Windows Script",
+                "title": "Execute Windows Script",
+                "type": "windows.execute_windows_script",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "description": "Execute from the remote file",
+                  "display_name": "Execute Windows Script",
+                  "execute_remote_file": true,
+                  "remote_file": "2.vbs",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  },
+                  "working_directory": "$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.input.variable_workflow_01B6HUY7LJOFT6g9Gh5uwZkYGof4uOAw473$"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01BDPLYSCFCF83KX1BpLmd0A0KlvzsAj23W",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch - Negative test Case",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch - Negative test Case",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01BDPLYU4F6CP21mO1GZ29IyH7DZqWMCTBS",
+                "name": "Execute Powershell Script",
+                "title": "Execute Powershell Script",
+                "type": "windows.execute_powershell_script",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "description": "Invalid remote file for Powershell script ",
+                  "display_name": "Execute Powershell Script",
+                  "execute_remote_file": true,
+                  "remote_file": "test1111.ps1",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  },
+                  "working_directory": "$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.input.variable_workflow_01B6HUY7LJOFT6g9Gh5uwZkYGof4uOAw473$"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BIF44GRXRLR3RXALqGlGxpWPNVj3Cr3LL",
+                "name": "Execute Powershell Script",
+                "title": "Execute Powershell Script",
+                "type": "windows.execute_powershell_script",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "description": "Invalid Script from the AO workflow ",
+                  "display_name": "Execute Powershell Script",
+                  "execute_remote_file": false,
+                  "powershell_script": "Get-Service | Where-Object {$_.Status -eq \"Running",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  },
+                  "working_directory": "$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.input.variable_workflow_01B6HUY7LJOFT6g9Gh5uwZkYGof4uOAw473$"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BDPLYVFMLZK1RktMwvDSIuAVyRG1XWQEP",
+                "name": "Execute Command",
+                "title": "Execute Command",
+                "type": "windows.execute_command",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "command": "mkdirer $workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.input.variable_workflow_01BA2P17YUOWZ4OcoF8Q2H5chPS8qpPMvFE$\\$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.input.variable_workflow_01B6HVUZUZZ086p7tFvfoaYrlXFlF6GYYlS$-$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.output.instance_id$",
+                  "continue_on_failure": true,
+                  "description": "Invalid WF input properties ",
+                  "display_name": "Execute Command",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BHQ77OBNFC93PRGe2bfnGljLwX2db8aJI",
+                "name": "Execute Windows Script",
+                "title": "Execute Windows Script",
+                "type": "windows.execute_windows_script",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "description": "Invalid script remote file",
+                  "display_name": "Execute Windows Script",
+                  "execute_remote_file": true,
+                  "remote_file": "list.vbs",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  },
+                  "working_directory": "$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.input.variable_workflow_01B6HUY7LJOFT6g9Gh5uwZkYGof4uOAw473$"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BHQH02QZBP80x5hEtfB0HtRZqL1Ed28O3",
+                "name": "Execute Windows Script",
+                "title": "Execute Windows Script",
+                "type": "windows.execute_windows_script",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "description": "Invalid bat file",
+                  "display_name": "Execute Windows Script",
+                  "execute_remote_file": true,
+                  "remote_file": "list.bat",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  },
+                  "working_directory": "$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.input.variable_workflow_01B6HUY7LJOFT6g9Gh5uwZkYGof4uOAw473$"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BYJPFK560ZQ0lBOd2EAmFTYfCfdwNYCWS",
+                "name": "Execute Windows Script",
+                "title": "Execute Windows Script",
+                "type": "windows.execute_windows_script",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "description": "Invalid bat file",
+                  "display_name": "Execute Windows Script",
+                  "execute_remote_file": true,
+                  "remote_file": "2.vbs",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  },
+                  "working_directory": "C:\\PWStest\\"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01B6HQ5J2HWVV1sGaT0tJEvsWEsh0F9Hcfn",
+        "name": "Parallel Block",
+        "title": "Parallel Block- Query Actions ",
+        "type": "logic.parallel",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": true,
+          "description": "This Block Contains the Query Actions Such as \n1. Perfomance Counter \n2.Windows Events \n3. Contols Services (start,stop etc)\n\nthis blocks covers both negative and Positive Cases",
+          "display_name": "Parallel Block- Query Actions ",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01B6HQ5MFHSIF5dlChuIWYySSuUADpAES7k",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch-Positive Case",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch-Positive Case",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01B6FFWYKP3QM2zkZ5Rp3UY3HLGQLL5nhDQ",
+                "name": "Group",
+                "title": "Query Windows Services",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Query Windows Services",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B6FFX9CRGXG3jIqXQuExQfwibCLTorFBm",
+                    "name": "Query Windows Performance Counter",
+                    "title": "Query Windows Performance Counter",
+                    "type": "windows.query_windows_performance_counter",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "counter_name": "% Processor Time",
+                      "display_name": "Query Windows Performance Counter",
+                      "instance_name": "_Total",
+                      "object_name": "Processor",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6HQN8MS95S43oSrYPUkZjjKL2hw0PWqF",
+                    "name": "Query Windows Performance Counter",
+                    "title": "Query Windows Performance Counter",
+                    "type": "windows.query_windows_performance_counter",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "counter_name": "% Processor Time",
+                      "display_name": "Query Windows Performance Counter",
+                      "instance_name": "*",
+                      "object_name": "Processor",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BDPNOM899740XwcydGUgo1DaxEcIqeFJE",
+                    "name": "Query Windows Performance Counter",
+                    "title": "Query Windows Performance Counter",
+                    "type": "windows.query_windows_performance_counter",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "counter_name": "Available MBytes",
+                      "display_name": "Query Windows Performance Counter",
+                      "object_name": "Memory",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BGU5CB7L86Z6wyb5UJlHQA1XP7BOp9ey0",
+                    "name": "Correlate Windows Events",
+                    "title": "Correlate Windows Events",
+                    "type": "windows.correlate_windows_events",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "after_time": "12/11/2019 11:41:13",
+                      "before_time": "12/12/2019 11:41:13",
+                      "continue_on_failure": true,
+                      "display_name": "Correlate Windows Events",
+                      "entry_type": [
+                        "Warning"
+                      ],
+                      "event_computer_name": "po-w12r2-mysql.ao.cisco.com",
+                      "event_description": "*",
+                      "event_number": 2147483712,
+                      "event_source": "AutoEnrollment",
+                      "log_name": "Application",
+                      "persist_output": true,
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BGTU7I3A30U7GORw2IRx5rTollVlBCdz0",
+                    "name": "Correlate Windows Events",
+                    "title": "Correlate Windows Events",
+                    "type": "windows.correlate_windows_events",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "after_time": "11/11/2019 11:41:13",
+                      "before_time": "11/12/2019 11:41:13",
+                      "continue_on_failure": true,
+                      "display_name": "Correlate Windows Events",
+                      "entry_type": [
+                        "Warning"
+                      ],
+                      "event_computer_name": "po-w12r2-mysql.ao.cisco.com",
+                      "event_description": "The description*",
+                      "event_number": 2147483712,
+                      "event_source": "AutoEnrollment",
+                      "log_name": "Application",
+                      "persist_output": true,
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6HQ9GA7RVL7NpBzgSL6Z0OqrqoAbczY0",
+                    "name": "Correlate Windows Events",
+                    "title": "Correlate Windows Events",
+                    "type": "windows.correlate_windows_events",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Correlate Windows Events",
+                      "entry_type": [
+                        "Error",
+                        "Information",
+                        "Warning"
+                      ],
+                      "log_name": "System",
+                      "persist_output": true,
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6FFXKX579U5b4gj6hotQRWhI7AduS0Ln",
+                    "name": "Correlate Windows Events",
+                    "title": "Correlate Windows Events",
+                    "type": "windows.correlate_windows_events",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Correlate Windows Events",
+                      "entry_type": [
+                        "Error",
+                        "Information",
+                        "Warning"
+                      ],
+                      "log_name": "Application",
+                      "persist_output": true,
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01CSAVG9GDHUP6tZvOiiER9NzfUsK0H5ZZp",
+                    "name": "Correlate Windows Events",
+                    "title": "Correlate Windows Events",
+                    "type": "windows.correlate_windows_events",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "after_time": "1/5/2020 11:08:32",
+                      "before_time": "1/6/2020 11:44:19",
+                      "continue_on_failure": true,
+                      "display_name": "Correlate Windows Events",
+                      "entry_type": [
+                        "Information"
+                      ],
+                      "event_computer_name": "po-w12r2-mysql.ao.cisco.com",
+                      "event_description": "The description *",
+                      "event_source": "gupdate",
+                      "log_name": "Application",
+                      "persist_output": false,
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6HQ9I36BSI7fJvMXE0Dp3arRx0OC2dJj",
+                    "name": "Control Windows Service",
+                    "title": "Control Windows Service",
+                    "type": "windows.control_windows_service",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_on_service": "start",
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Control Windows Service",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "seconds_to_wait": 10,
+                      "service_name": "W3SVC",
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6FFXW1ACQS1hKKkjxDrSr0l31bz7UMpr",
+                    "name": "Query Windows Service",
+                    "title": "Query Windows Service",
+                    "type": "windows.query_windows_service",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Service",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "service_name": "AppMgmt",
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6FFY7KZKHV5qxpqKN8s7bWnurJI5n3hZ",
+                    "name": "Control Windows Service",
+                    "title": "Control Windows Service",
+                    "type": "windows.control_windows_service",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_on_service": "stop",
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Control Windows Service",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "seconds_to_wait": 10,
+                      "service_name": "W3SVC",
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6FFYJ74JUF7heap8tBAr23DdXUZUnVjk",
+                    "name": "Query Windows Events",
+                    "title": "Query Windows Events",
+                    "type": "windows.query_windows_events",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Events",
+                      "event_type": [
+                        "Error",
+                        "Information",
+                        "Warning"
+                      ],
+                      "events_with_format": "Days",
+                      "get_latest_event": false,
+                      "log_name": "System",
+                      "persist_output": false,
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "within_the_last": 5
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6HQ9JD6EYI2cR9mPG8eJfU2QYOUnx0mN",
+                    "name": "Query Windows Events",
+                    "title": "Query Windows Events",
+                    "type": "windows.query_windows_events",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Events",
+                      "event_type": [
+                        "Error",
+                        "Information",
+                        "Warning"
+                      ],
+                      "events_with_format": "Days",
+                      "get_latest_event": false,
+                      "log_name": "Application",
+                      "persist_output": false,
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "within_the_last": 5
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6HQNBIUO7F3C62oE6DBkFldL8f176oqz",
+                    "name": "Control Windows Service",
+                    "title": "Control Windows Service",
+                    "type": "windows.control_windows_service",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_on_service": "restart",
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Control Windows Service",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "seconds_to_wait": 10,
+                      "service_name": "W3SVC",
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6HQ9KB2NSA3KeRIkvLgBsi8NkM5nmyxe",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": false,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKCC",
+                      "registry_key": "\\Software\\Fonts",
+                      "registry_key_path": "\\Software\\Fonts",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "value_name": "LogPixels"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BSNS4JUUGQP2Ff2tii3iDSfPxmDf2E1vn",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": true,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKCC",
+                      "registry_key": "\\Software\\Fonts",
+                      "registry_key_path": "\\Software\\Fonts",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6FFYUB3TJ56sxx9TKt2J23tmJrj8TQBW",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": false,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKCR",
+                      "registry_key": "._sln",
+                      "registry_key_path": "\\._sln",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "value_name": "(Default)"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BSNTQ5T7G3T4KZgGAghFTunfBJomeDMZL",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": true,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKCR",
+                      "registry_key": "._sln",
+                      "registry_key_path": "\\._sln",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6HQNDLCR8Q1dlivIpxILQlUf7HGAG3Z0",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": false,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKCU",
+                      "registry_key": "\\AppEvents\\Schemes\\Apps\\.Default",
+                      "registry_key_path": "\\Control Panel\\Mouse",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "value_name": "SmoothMouseXCurve"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BSNV5THV57L16wdRcL1krZvR1xuQSIdjV",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": true,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKCU",
+                      "registry_key": "\\AppEvents\\Schemes\\Apps\\.Default",
+                      "registry_key_path": "\\Control Panel\\Mouse",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B7AI96JKZNK0uK5eRiQN4pzIzAuThQMII",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": true,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKU",
+                      "registry_key": "S-1-5-18\\Control Panel\\Mouse",
+                      "registry_key_path": "\\S-1-5-18\\Control Panel\\Mouse",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BSNVRJMPPZD6Oxfh0fY0BbuZnXZxuAw9l",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": false,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKU",
+                      "registry_key": "S-1-5-18\\Control Panel\\Mouse",
+                      "registry_key_path": "\\S-1-5-18\\Control Panel\\Mouse",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "value_name": "SmoothMouseXCurve"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6HQKS1BKTX6ZeE3mhoXhUvLbxQSvvE5Y",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": false,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKLM",
+                      "registry_key": "\\SOFTWARE\\ORACLE\\KEY_OraDB12Home1",
+                      "registry_key_path": "\\SOFTWARE\\ORACLE\\KEY_OraDB12Home1",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "value_name": "OLEDB"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B7AIAP0BC4O6mCr7Qb4AxzBc6nobYSB0z",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": true,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKLM",
+                      "registry_key": "\\SOFTWARE\\ORACLE\\KEY_OraDB12Home1123333",
+                      "registry_key_path": "\\SOFTWARE\\ORACLE\\KEY_OraDB12Home1",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01B6HQ5NNI8Y837yBEKpgIoXc8ZiklvmXCX",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch-Negative Case",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch-Negative Case",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01B6HQ9D0CH6E4Erw8kRpOdUQ5Pai0xGErB",
+                "name": "Group",
+                "title": "Query Windows Services",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Query Windows Services",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01BGU492BDTNR3s5YaL70meWqEHYdADTlRE",
+                    "name": "Correlate Windows Events",
+                    "title": "Correlate Windows Events",
+                    "type": "windows.correlate_windows_events",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "after_time": "11/11/2019 11:41:13",
+                      "before_time": "11/12/2019 11:41:13",
+                      "continue_on_failure": true,
+                      "display_name": "Correlate Windows Events",
+                      "entry_type": [
+                        "Warning"
+                      ],
+                      "event_computer_name": "po-w12r2-mysql.tidalsoft.local",
+                      "event_description": "*",
+                      "event_number": 12,
+                      "event_source": "AutoEnrollment",
+                      "log_name": "Application",
+                      "persist_output": true,
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6HQ9FC0MSL6LBSPhoX3bu7M4PutQbzyu",
+                    "name": "Query Windows Performance Counter",
+                    "title": "Query Windows Performance Counter",
+                    "type": "windows.query_windows_performance_counter",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "counter_name": "Private Bytes",
+                      "display_name": "Query Windows Performance Counter",
+                      "instance_name": "Tidal.Automation.Server",
+                      "object_name": "Process",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BGU3CNSTFKU2DINpSDt9STYVtv0JD9cEs",
+                    "name": "Correlate Windows Events",
+                    "title": "Correlate Windows Events",
+                    "type": "windows.correlate_windows_events",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "after_time": "11/11/2019 11:41:13",
+                      "before_time": "11/12/2019 11:41:13",
+                      "continue_on_failure": true,
+                      "display_name": "Correlate Windows Events",
+                      "entry_type": [
+                        "Warning"
+                      ],
+                      "event_computer_name": "po-w12r2-mysql.tidalsoft.local",
+                      "event_description": "Invalid Description",
+                      "event_number": 2147483712,
+                      "event_source": "AutoEnrollment",
+                      "log_name": "Application",
+                      "persist_output": true,
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BGU65VXO50Y4fJUfYECrtSayBXJvuNMaF",
+                    "name": "Correlate Windows Events",
+                    "title": "Correlate Windows Events",
+                    "type": "windows.correlate_windows_events",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "after_time": "11/11/2019 11:41:13",
+                      "before_time": "11/12/2019 11:41:13",
+                      "continue_on_failure": true,
+                      "display_name": "Correlate Windows Events",
+                      "entry_type": [
+                        "Warning"
+                      ],
+                      "event_computer_name": "po-w12r2-mysql.tidalsoft.local",
+                      "event_description": "*",
+                      "event_number": 2147483712,
+                      "event_source": "AutoEnrollment",
+                      "log_name": "InValidLogName",
+                      "persist_output": true,
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6HQ9H6BZUK5WASMmfg3R7NJQDFfpPxkj",
+                    "name": "Query Windows Service",
+                    "title": "Query Windows Service",
+                    "type": "windows.query_windows_service",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Service",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "service_name": "AppMgmt123",
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B7AJE2L33062lOydHMFdq88YFRXEG5IQD",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": false,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKLM",
+                      "registry_key": "\\SOFTWARE\\ORACLE\\KEY_OraDB12Home1",
+                      "registry_key_path": "\\SOFTWARE\\ORACLE\\KEY_OraDB12Home1",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "value_name": "OLEDB12333333"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BSO4TSAH2OP7gaC75ZyN9IilfmWmbdwh4",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": false,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKLM",
+                      "registry_key": "\\SOFTWARE\\ORACLE\\KEY_OraDB12Home1",
+                      "registry_key_path": "\\SOFTWARE\\ORACLE\\KEY_OraDB12Home123223",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "value_name": "OLEDB"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BSNS0PXWIK64Sfq8ZqfCrAq9NI2bSCp7X",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": false,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKCC",
+                      "registry_key": "\\Software\\Fonts",
+                      "registry_key_path": "\\Software\\Fonts",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "value_name": "LogPixels12333"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BSO7CENYIGG63XS3UnH5sXbnaAW63HoQf",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": false,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKCC",
+                      "registry_key": "\\Software\\Fonts",
+                      "registry_key_path": "\\Software\\Fonts12344",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "value_name": "LogPixels"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BSNTRHZ2MJV0qzHx2BjW9AjYOWMpHHQ2E",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": false,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKCR",
+                      "registry_key": "._sln",
+                      "registry_key_path": "\\._sln",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "value_name": "(Default)12333"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BSO841H93RT7eacuWZCPu8ByWiMgJOG4x",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": false,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKCR",
+                      "registry_key": "._sln",
+                      "registry_key_path": "\\._sln123",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "value_name": "(Default)"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BSNUSO6OO6Z6okgm8EZSbly3CJ0wpdcvN",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": false,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKCU",
+                      "registry_key": "\\AppEvents\\Schemes\\Apps\\.Default",
+                      "registry_key_path": "\\Control Panel\\Mouse",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "value_name": "SmoothMouseXCurve123333"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BSO8CO5P0I9586NbLCWkzw8PATP8vt84F",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": false,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKCU",
+                      "registry_key": "\\AppEvents\\Schemes\\Apps\\.Default",
+                      "registry_key_path": "\\Control Panel\\Mouse1234444",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "value_name": "SmoothMouseXCurve"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BSNVTA3VLRQ1fHVO9AVfIBt6j4jDiABng",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": false,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKU",
+                      "registry_key": "S-1-5-18\\Control Panel\\Mouse",
+                      "registry_key_path": "\\S-1-5-18\\Control Panel\\Mouse1233333333",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "value_name": "SmoothMouseXCurve"
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BSO95W0RAEL4XIVvnnYp5xWdJrpqAiFzp",
+                    "name": "Query Windows Registry",
+                    "title": "Query Windows Registry",
+                    "type": "windows.query_windows_registry",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "check_key_existence": false,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Registry",
+                      "registry_hive": "HKU",
+                      "registry_key": "S-1-5-18\\Control Panel\\Mouse",
+                      "registry_key_path": "\\S-1-5-18\\Control Panel\\Mouse",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "value_name": "SmoothMouseXCurve1234567"
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01B6HQN4ZXDRU2EApChVuberBhEYgUhS0T0",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch- Negative Case",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch- Negative Case",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01B6HQN6D2AWD0ouwEUkMyvLKjaoxl0Fekb",
+                "name": "Group",
+                "title": "Query Windows Services",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Query Windows Services",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B6HQN9JG4B02DPjVyheHPqGWtc8boxRYn",
+                    "name": "Correlate Windows Events",
+                    "title": "Correlate Windows Events",
+                    "type": "windows.correlate_windows_events",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Correlate Windows Events",
+                      "entry_type": [
+                        "FailureAudit",
+                        "SuccessAudit"
+                      ],
+                      "log_name": "Securiity",
+                      "persist_output": true,
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BGU2IC74AR96l4QafjJ52Xl8xeoMuPhWz",
+                    "name": "Correlate Windows Events",
+                    "title": "Correlate Windows Events",
+                    "type": "windows.correlate_windows_events",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "after_time": "11/11/2019 11:41:13",
+                      "before_time": "11/12/2019 11:41:13",
+                      "continue_on_failure": true,
+                      "display_name": "Correlate Windows Events",
+                      "entry_type": [
+                        "Warning"
+                      ],
+                      "event_computer_name": "po-w12r2-mysql.tidalsoft.local",
+                      "event_description": "The description*",
+                      "event_number": 2147483712,
+                      "event_source": "InValid Event Source",
+                      "log_name": "Application",
+                      "persist_output": true,
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01BGU2SF305KW3vVVpQRSumfwIggEyg9vGB",
+                    "name": "Correlate Windows Events",
+                    "title": "Correlate Windows Events",
+                    "type": "windows.correlate_windows_events",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "after_time": "11/11/2019 11:41:13",
+                      "before_time": "11/12/2019 11:41:13",
+                      "continue_on_failure": true,
+                      "display_name": "Correlate Windows Events",
+                      "entry_type": [
+                        "Warning"
+                      ],
+                      "event_computer_name": "Invalid Computer Name",
+                      "event_description": "The description*",
+                      "event_number": 2147483712,
+                      "event_source": "AutoEnrollment",
+                      "log_name": "Application",
+                      "persist_output": true,
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6OAPW4DS9K3kP4TOV5F7j0bqrej2jvTD",
+                    "name": "Control Windows Service",
+                    "title": "Control Windows Service",
+                    "type": "windows.control_windows_service",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_on_service": "restart",
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Control Windows Service",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "seconds_to_wait": 10,
+                      "service_name": "W3SVC123333333",
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6HQNCJZFPC5a1DIjYW0jhJYnoKhU9pvC",
+                    "name": "Query Windows Events",
+                    "title": "Query Windows Events",
+                    "type": "windows.query_windows_events",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Events",
+                      "event_type": [
+                        "FailureAudit",
+                        "SuccessAudit"
+                      ],
+                      "events_with_format": "Days",
+                      "get_latest_event": false,
+                      "log_name": "Security",
+                      "persist_output": false,
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "within_the_last": 5
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01B6HQKJO4R764CHjz74we9BT7mlxJkHA3O",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch- Negative Case",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch- Negative Case",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01B6HQKL26IVT05jb31Q9v4XHjb5oyzSnfE",
+                "name": "Group",
+                "title": "Query Windows Services",
+                "type": "logic.group",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Query Windows Services",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01B6HQKMXRYEA67x9JcvXsEG0Q87oaKD5k7",
+                    "name": "Query Windows Performance Counter",
+                    "title": "Query Windows Performance Counter",
+                    "type": "windows.query_windows_performance_counter",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "counter_name": "% Processor Time",
+                      "display_name": "Query Windows Performance Counter",
+                      "instance_name": "_Total",
+                      "object_name": "Processor123",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6HQKNV8DIC0JFXgh2ua4pmEg3YuuD08C",
+                    "name": "Correlate Windows Events",
+                    "title": "Correlate Windows Events",
+                    "type": "windows.correlate_windows_events",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Correlate Windows Events",
+                      "entry_type": [
+                        "Error"
+                      ],
+                      "event_description": "*",
+                      "log_name": "Security",
+                      "persist_output": true,
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6HQKPPWFZI6kqlzJM6CWywsQmUFnnn3e",
+                    "name": "Control Windows Service",
+                    "title": "Control Windows Service",
+                    "type": "windows.control_windows_service",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_on_service": "pause",
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Control Windows Service",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "seconds_to_wait": 10,
+                      "service_name": "W3SVC",
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6OAB0ZWHIM3F5N1MR2aTiAY15VUtI7Tp",
+                    "name": "Control Windows Service",
+                    "title": "Control Windows Service",
+                    "type": "windows.control_windows_service",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_on_service": "resume",
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Control Windows Service",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "seconds_to_wait": 10,
+                      "service_name": "W3SVC",
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01B6HQKQPZ3YG21oexU5XyYQUn9yu07Y6ka",
+                    "name": "Query Windows Events",
+                    "title": "Query Windows Events",
+                    "type": "windows.query_windows_events",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Query Windows Events",
+                      "event_type": [
+                        "Error"
+                      ],
+                      "events_with_format": "Days",
+                      "get_latest_event": false,
+                      "log_name": "SystemDemo",
+                      "persist_output": false,
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                      },
+                      "within_the_last": 5
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01B6FFZ9S5Y125Ve3vCuh7z7M7NzZfMu7Jh",
+        "name": "Group",
+        "title": "Create Folder/Copy and Folder Properties ",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Create Folder/Copy and Folder Properties ",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01B6FFZL5QZKJ4v8ZvPrzfuyTm9kgjcmb1s",
+            "name": "Get Folder Properties",
+            "title": "Get Folder Properties",
+            "type": "windows.get_folder_properties",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Get Folder Properties",
+              "folder_path": "C:\\VinayCreatedByAO\\AO",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B6FFZWJVTD04AtSSMqH7KliI5JjVNdiAZ",
+            "name": "Create Folder",
+            "title": "Create Folder",
+            "type": "windows.create_folder",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "directory_path": "$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.input.variable_workflow_01BA2P17YUOWZ4OcoF8Q2H5chPS8qpPMvFE$\\AO-$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.output.instance_id$",
+              "display_name": "Create Folder",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01B6FG07QT2TT0uxtBiymFE0d7ugshShTCz",
+            "name": "Copy Folder",
+            "title": "Copy Folder",
+            "type": "windows.copy_folder",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "destination_path": "C:\\CopiedfromVinayCreatedByAO-$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.output.instance_id$",
+              "display_name": "Copy Folder",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "source_path": "C:\\VinayCreatedByAO\\AO",
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+              }
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01BA1VSWDOCSM6pzNiSBiMgvfvImyrVYFiY",
+        "name": "Parallel Block",
+        "title": "Read and Write Actions ",
+        "type": "logic.parallel",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "description": "This block covers all the combination of read adn write files. ",
+          "display_name": "Read and Write Actions ",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01BA1VT0K7MCJ1g74S8MxQj6dJ0cNWBsXVD",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01B6FG0QKKBMY5lVhj7S3QvVKrscNmOfYxJ",
+                "name": "Read File",
+                "title": "Read File",
+                "type": "windows.windows_read_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Read File",
+                  "remote_file_path": "C:\\Test Ascii.txt",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01B6FG12C80R47UYhqY7pVdFSJbBHfk4w42",
+                "name": "Write File",
+                "title": "Write File",
+                "type": "windows.write_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Write File",
+                  "encoding": "ascii",
+                  "file_content": "Unicode By AO from the Vinay User-Ascii$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.output.instance_id$",
+                  "file_name_with_path": "C:\\Test Ascii.txt",
+                  "options": "AEF",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01BA1VT1M8KFR5nFk2b7vtvnXJ2AlVyTrWF",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch-Postive test Cases",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch-Postive test Cases",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01BA1W2LZYTGE27wX18YUUDm4GwlXktOwjq",
+                "name": "Read File",
+                "title": "Read File",
+                "type": "windows.windows_read_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Read File",
+                  "remote_file_path": "C:\\VinayCreatedByAO\\AO\\Test.txt",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BA1W5FFLPUC4cX200LCfFjSpFGA9ZYrQc",
+                "name": "Write File",
+                "title": "Write File",
+                "type": "windows.write_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Write File",
+                  "encoding": "utf-16",
+                  "file_content": "Unicode By AO from the Vinay User UTF16-$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.output.instance_id$",
+                  "file_name_with_path": "C:\\Test UTF16.txt",
+                  "options": "AEF",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BA1YZD7UI1X1FjgFPO7VQFFuGgFZlJQv7",
+                "name": "Write File",
+                "title": "Write File",
+                "type": "windows.write_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Write File",
+                  "encoding": "utf-32",
+                  "file_content": "Unicode By AO from the Vinay User-UTF32-$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.output.instance_id$",
+                  "file_name_with_path": "C:\\Test UTF32.txt",
+                  "options": "AEF",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BA1YY4MLX432nHEUfjtiFKaq1gzBXV6yv",
+                "name": "Write File",
+                "title": "Write File",
+                "type": "windows.write_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Write File",
+                  "encoding": "utf-7",
+                  "file_content": "Unicode By AO from the Vinay User-UTF7-$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.output.instance_id$",
+                  "file_name_with_path": "C:\\Test UTF7.txt",
+                  "options": "AEF",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BA1YWW74YD24cDp5UtrBiRGIoL7AvXM6U",
+                "name": "Write File",
+                "title": "Write File",
+                "type": "windows.write_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Write File",
+                  "encoding": "utf-8",
+                  "file_content": "Unicode By AO from the Vinay User-UTF8-$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.output.instance_id$",
+                  "file_name_with_path": "C:\\Test UTF8.txt",
+                  "options": "AEF",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01BA22E73SFO01MC7fdrjLuZXFLVGLqgAST",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch-Postive test Cases",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch-Postive test Cases",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01BA22E9E2OX43J4UUHkDnqYGHE7uGpMTUy",
+                "name": "Write File",
+                "title": "Write File",
+                "type": "windows.write_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Write File",
+                  "encoding": "utf-16",
+                  "file_content": "Unicode By AO from the Vinay User-UTF16OV-$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.output.instance_id$",
+                  "file_name_with_path": "C:\\Test UTF16OV.txt",
+                  "options": "OEF",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BA22EADCCGZ1RMqC7TXLPf8JM0KjRWkSR",
+                "name": "Write File",
+                "title": "Write File",
+                "type": "windows.write_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Write File",
+                  "encoding": "utf-32",
+                  "file_content": "Unicode By AO from the Vinay User-UTF32OV-$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.output.instance_id$",
+                  "file_name_with_path": "C:\\Test UTF32OV.txt",
+                  "options": "OEF",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BA22EBB1ABO1F3THXDUujYXYidf6qLN33",
+                "name": "Write File",
+                "title": "Write File",
+                "type": "windows.write_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Write File",
+                  "encoding": "utf-7",
+                  "file_content": "Unicode By AO from the Vinay User-UTF7OV-$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.output.instance_id$",
+                  "file_name_with_path": "C:\\Test UTF7OV.txt",
+                  "options": "OEF",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BA22ECB954K588O9TwJmNpxE69z6DCmzQ",
+                "name": "Write File",
+                "title": "Write File",
+                "type": "windows.write_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Write File",
+                  "encoding": "utf-8",
+                  "file_content": "Unicode By AO from the Vinay User-UTFOV-$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.output.instance_id$",
+                  "file_name_with_path": "C:\\Test UTFOV.txt",
+                  "options": "OEF",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BA246NT60KB24PKoJ8N5wvuIwByZIV9Yb",
+                "name": "Write File",
+                "title": "Write File",
+                "type": "windows.write_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Write File",
+                  "encoding": "ascii",
+                  "file_content": "Unicode By AO from the Vinay User-ASCIDOV-$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.output.instance_id$",
+                  "file_name_with_path": "C:\\Test ASCIDOV.txt",
+                  "options": "DNOEF",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01BA1XD9BYI7931ksqy4LtQbnUCkcYQoY6m",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch-Postive test Cases",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch-Postive test Cases",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01BA1XJHN9IUO1kX28E0rOe0L19YUJ9zr6P",
+                "name": "Read File",
+                "title": "Read File",
+                "type": "windows.windows_read_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Read File",
+                  "remote_file_path": "C:\\Test UTF8OV.txt",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BA26H4MD5JE1P7eQjA9RXe6WQtB07sQpB",
+                "name": "Read File",
+                "title": "Read File",
+                "type": "windows.windows_read_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Read File",
+                  "remote_file_path": "C:\\Test UTF32.txt",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BA26IKGW9QO7j8PHMLM3F7Ak7BWHQPv0P",
+                "name": "Read File",
+                "title": "Read File",
+                "type": "windows.windows_read_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Read File",
+                  "remote_file_path": "C:\\Test UTF16.txt",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BA26KI351J35kHCJs2Hvv3lzrk65xPhJo",
+                "name": "Read File",
+                "title": "Read File",
+                "type": "windows.windows_read_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Read File",
+                  "remote_file_path": "C:\\tony.text",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BLYQ7KF1MHI6vGMW18qXBugBfnFsgwknR",
+                "name": "Write File",
+                "title": "Write File",
+                "type": "windows.write_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "Write File",
+                  "encoding": "utf-8",
+                  "file_content": "test",
+                  "file_name_with_path": "C:\\test123-$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.output.instance_id$.txt",
+                  "options": "DNOEF",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BLYQYWINNMV0qGvKXrbCl8cl6LhIfkSiv",
+                "name": "Write File",
+                "title": "Write File",
+                "type": "windows.write_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "Write File",
+                  "encoding": "ascii",
+                  "file_content": "test",
+                  "file_name_with_path": "C:\\test123.txt",
+                  "options": "DNOEF",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BLYQXEFSTXT5EXNSzM6eDrpY6KZ5LKnwX",
+                "name": "Write File",
+                "title": "Write File",
+                "type": "windows.write_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "Write File",
+                  "encoding": "utf-32",
+                  "file_content": "test",
+                  "file_name_with_path": "C:\\test123.txt",
+                  "options": "AEF",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01BLYP4BLCBES5dnItrkFsMfoqlfaxqim0o",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch-Negative Test Case",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Parallel Branch-Negative Test Case",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01BLYP4DIRS3J5XjYC8EhIMdhjq5W7L3UYe",
+                "name": "Read File",
+                "title": "Read File",
+                "type": "windows.windows_read_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "description": "InValid File-",
+                  "display_name": "Read File",
+                  "remote_file_path": "C:\\VinayCreatedByAO\\AO\\Test1.txt",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BLYRFSTDXPK2gOVOE1MaEP6xJrwgDXyRw",
+                "name": "Write File",
+                "title": "Write File",
+                "type": "windows.write_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Write File",
+                  "encoding": "utf-32",
+                  "file_name_with_path": "C:\\Test ASCIDOV.txt",
+                  "options": "AEF",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01BLZ2M71Q97F361ALF9RgHU2mKzPn7gNfU",
+                "name": "Write File",
+                "title": "Write File",
+                "type": "windows.write_file",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Write File",
+                  "encoding": "utf-32",
+                  "file_name_with_path": "C:\\Test ASCIDOV",
+                  "options": "AEF",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+                  }
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01BO9YVR03JQ64bKOSmm7dcYLqzj5CIBpW3",
+        "name": "Stop Process",
+        "title": "Stop Process",
+        "type": "windows.stop_windows_process",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": true,
+          "display_name": "Stop Process",
+          "process_pid": 13736,
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01BO9YX4SGZSN5TPapChz5ohYnKeY6ZnlUQ",
+        "name": "Uninstall Application",
+        "title": "Uninstall Application",
+        "type": "windows.uninstall_application",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "application_name": "TextPad 5",
+          "continue_on_failure": true,
+          "display_name": "Uninstall Application",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01BO9YYRUZB2D2dnBUAPfafv6WzXef68d7q",
+        "name": "Restart Server",
+        "title": "Restart Server",
+        "type": "windows.restart",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Restart Server",
+          "restart_note": "Test from AO",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "service_delay": 10,
+          "skip_execution": true,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_0192DBAFRILD42ESPNPOmjm34eYWijrzWlO"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01CT5O8A9VG9J4iwy6WsgII5gARGvXFied5",
+        "name": "Condition Block",
+        "title": "All Action Results True/False",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "All Action Results True/False",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01CT5O8E4JCUP6SSFSb4KqazSzYV8FmSIIi",
+            "name": "Condition Branch",
+            "title": "All Actions Should Pass == 200",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01B6HPC4Y4CXJ64ZxjhbBxSh6dPodnZ67GZ.output.succeeded$",
+                "operator": "eq",
+                "right_operand": true
+              },
+              "continue_on_failure": false,
+              "display_name": "All Actions Should Pass == 200",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01CT5O8FLFHY77dki6uiinvjeumrpqArRWd",
+            "name": "Condition Branch",
+            "title": "If Any actipn Fails ==!200",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01B6HPC4Y4CXJ64ZxjhbBxSh6dPodnZ67GZ.output.succeeded$",
+                "operator": "ne",
+                "right_operand": true
+              },
+              "continue_on_failure": false,
+              "display_name": "If Any actipn Fails ==!200",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01CT5TIU4O0RM1xGTEeaIIdB4bIog2EoO1r",
+        "name": "Set Variables",
+        "title": "Table Email",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Table Email",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01B6FFVAQBHGJ5NcfMIE0N2904zySf42ffY.output.variable_workflow_01CT5M5LLSCRF5kuMlVRlcPrGAjbEs0Bg8h$",
+              "variable_value_new": "\u003ch2\u003eWindows Adapter\u003c/h2\u003e\n\n\u003ctable\u003e\n\u003ctr\u003e\n\u003cth\u003eActivity Name\u003c/th\u003e\n\u003cth\u003eTrue/False\u003c/th\u003e\n\u003cth\u003eStatus Code\u003c/th\u003e\n\u003cth\u003eError Message\u003c/th\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eExecute Power shell script\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Powershell Script.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Powershell Script.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Powershell Script.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eExecute Command\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Command.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Command.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Command.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eExecute Windows script\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Windows Script.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Windows Script.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Windows Script.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eExecute Windows script\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Windows Script.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Windows Script.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Windows Script.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eExecute Power shell script\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Powershell Script.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Powershell Script.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Powershell Script.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eExecute Power shell script\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Powershell Script.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Powershell Script.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Powershell Script.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eExecute Command\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Command.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Command.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Command.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eExecute Windows script\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Windows Script.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Windows Script.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Execute Windows Script.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eQuery Windows Performance Counter\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Performance Counter.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Performance Counter.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Performance Counter.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eQuery Windows Performance Counter\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Performance Counter.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Performance Counter.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Performance Counter.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eQuery Windows Performance Counter\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Performance Counter.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Performance Counter.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Performance Counter.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eQuery Windows Performance Counter\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Performance Counter.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Performance Counter.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Performance Counter.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eCorreleate Winodws Events\u003c/td\u003e\n\u003ctd\u003e[$activity.Correlate Windows Events.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Correlate Windows Events.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Correlate Windows Events.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eCorreleate Winodws Events\u003c/td\u003e\n\u003ctd\u003e[$activity.Correlate Windows Events.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Correlate Windows Events.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Correlate Windows Events.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eCorreleate Winodws Events\u003c/td\u003e\n\u003ctd\u003e[$activity.Correlate Windows Events.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Correlate Windows Events.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Correlate Windows Events.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eControl Winodws Service\u003c/td\u003e\n\u003ctd\u003e[$activity.Control Windows Service.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Control Windows Service.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Control Windows Service.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eQuery Winodws Service\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Service.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Service.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Service.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eControl Winodws Service\u003c/td\u003e\n\u003ctd\u003e[$activity.Control Windows Service.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Control Windows Service.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Control Windows Service.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eQuery Winodws Events\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Events.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Events.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Events.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eQuery Winodws Events\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Events.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Events.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Query Windows Events.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eControl Winodws Service\u003c/td\u003e\n\u003ctd\u003e[$activity.Control Windows Service.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Control Windows Service.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Control Windows Service.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eGet Folder Properties\u003c/td\u003e\n\u003ctd\u003e[$activity.Get Folder Properties.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Get Folder Properties.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Get Folder Properties.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eCreate Folder\u003c/td\u003e\n\u003ctd\u003e[$activity.Create Folder.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Create Folder.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Create Folder.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eCopy Folder\u003c/td\u003e\n\u003ctd\u003e[$activity.Copy Folder.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Copy Folder.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Copy Folder.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eRead File\u003c/td\u003e\n\u003ctd\u003e[$activity.Read File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Read File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Read File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eWrite File\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eRead File\u003c/td\u003e\n\u003ctd\u003e[$activity.Read File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Read File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Read File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eUTF- 16 Write File\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eUTF - 32 Write File\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eUTF-7 Write File\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eUTF -8 Write File\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eUTF -16 Write File Override Existed File\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eUTF -32 Write File Override Existed File\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eUTF -7 Write File Override Existed File\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eUTF -8 Write File Override Existed File\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eASCII Write File Override Existed File\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eUTF -8 Read File\u003c/td\u003e\n\u003ctd\u003e[$activity.Read File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Read File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Read File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eUTF -32 Read File\u003c/td\u003e\n\u003ctd\u003e[$activity.Read File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Read File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Read File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eUTF -16  Read  File\u003c/td\u003e\n\u003ctd\u003e[$activity.Read File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Read File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Read File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eText Read File\u003c/td\u003e\n\u003ctd\u003e[$activity.Read File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Read File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Read File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eUTF -8 Do Not  Override If File Existed\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eASCII Do Not  Override If File Existed\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eUTF -32 Append Existed File\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Write File.output.Error.Error Message.message$]\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eStop Process\u003c/td\u003e\n\u003ctd\u003e[$activity.Stop Process.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Stop Process.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003ctr\u003e\n\u003ctd\u003eUninstall Application\u003c/td\u003e\n\u003ctd\u003e[$activity.Uninstall Application.output.Succeeded$]\u003c/td\u003e\n\u003ctd\u003e[$activity.Uninstall Application.output.Error.Error Code.code$]\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\n\u003c/table\u003e"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb"
+    ]
+  },
+  "categories": {
+    "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb": {
+      "unique_name": "category_01EX459FXMRDS3CxVnDhHeqYD92dSrcK7qb",
+      "name": "tercel",
+      "title": "tercel",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV": {
+      "unique_name": "definition_target_0180ZAPJEJR1S3fVyAh3hlYsSlvB9B4HlXV",
+      "name": "RG windows",
+      "title": "RG windows",
+      "type": "windows.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01DD7FDJN54LZ37zcwBasarA7Qfb2kFuCfu",
+        "description": "test1111",
+        "display_name": "RG windows",
+        "host": "10.201.113.13",
+        "port": 5985,
+        "protocol": "http"
+      }
+    },
+    "definition_target_0192DBAFRILD42ESPNPOmjm34eYWijrzWlO": {
+      "unique_name": "definition_target_0192DBAFRILD42ESPNPOmjm34eYWijrzWlO",
+      "name": "RG windows restart ",
+      "title": "RG windows restart ",
+      "type": "windows.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "display_name": "RG windows restart ",
+        "host": "cpo-maria-03.tidalsoft.local",
+        "port": 5985,
+        "protocol": "http"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01DD7FDJN54LZ37zcwBasarA7Qfb2kFuCfu": {
+      "unique_name": "definition_runtime_user_01DD7FDJN54LZ37zcwBasarA7Qfb2kFuCfu",
+      "name": "aowindows",
+      "title": "aowindows",
+      "type": "runtime_user.windows_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "aowindows",
+        "password": "*****",
+        "username": "*****"
+      }
+    }
+  }
+}
