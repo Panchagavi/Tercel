@@ -1,0 +1,428 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01GY8QVDRGIIQ2nWXtMyPeJGr4c3WpEsdc2",
+    "name": "Create Deployment in WM_172.25.5.20",
+    "title": "Create Deployment in WM_172.25.5.20",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Deployment-Name",
+          "type": "datatype.string",
+          "is_required": true
+        },
+        "unique_name": "variable_workflow_01GY96LVI2OYM1LDyH1FCJ8RIhDupYjpssf",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Metadata",
+          "type": "datatype.string",
+          "is_required": true
+        },
+        "unique_name": "variable_workflow_01GY96SDJ4IML0tvfoG3BIl52ZuyAcHZbCB",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "input",
+          "name": "VMDisk",
+          "type": "datatype.integer",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01GY9DRB1EGQF7JEfR8Ljppg61SoMguTYDy",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "SnapShotName",
+          "type": "datatype.string",
+          "is_required": true
+        },
+        "unique_name": "variable_workflow_01GY9DZ6DR00R5oPsW7FhxmVtvyn8MtiFQu",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Deployment_Details",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01GY9IFITGE7U4h6kXPPldi57HQmXbvkAko",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "VM Details",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01GY9ILBDHI2T5dp7xrv8drtLBTk7Euj1oK",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Create Deployment in WM_172.25.5.20",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "ccsuite.endpoint",
+        "target_id": "definition_target_01GY8TT3NMA9R4Www15j0lZEvFpr8FHwfY7",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01GY8UJ9WJ7NU4cvN1BomTP6UDeI0gOozvX",
+        "name": "Generic CCS API Request",
+        "title": "Create a Deployment in WM_20",
+        "type": "ccs.api_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "api_body": "{\n        \"appId\": 31,\n        \"appVersion\": \"1.1\",\n        \"name\": \"$workflow.definition_workflow_01GY8QVDRGIIQ2nWXtMyPeJGr4c3WpEsdc2.input.variable_workflow_01GY96LVI2OYM1LDyH1FCJ8RIhDupYjpssf$-$workflow.definition_workflow_01GY8QVDRGIIQ2nWXtMyPeJGr4c3WpEsdc2.output.instance_id$\",\n        \"metadatas\": [\n                {\n                        \"id\": 8,\n                        \"namespace\": \"\",\n                        \"tagName\": \"New_MetaData_AppProfile\",\n                        \"tagCollectionId\": 8,\n                        \"value\": \"$workflow.definition_workflow_01GY8QVDRGIIQ2nWXtMyPeJGr4c3WpEsdc2.input.variable_workflow_01GY96SDJ4IML0tvfoG3BIl52ZuyAcHZbCB$\",\n                        \"required\": true,\n                        \"editable\": true,\n                        \"name\": \"New_MetaData_AppProfile\"\n                },\n                {\n                        \"id\": 9,\n                        \"namespace\": \"\",\n                        \"tagName\": \"IsThisCluster\",\n                        \"tagCollectionId\": 8,\n                        \"value\": \"Yes 2VM Cluster\",\n                        \"required\": false,\n                        \"editable\": false,\n                        \"name\": \"IsThisCluster\"\n                },\n                {\n                        \"id\": 12,\n                        \"namespace\": \"\",\n                        \"tagName\": \"New_MetaData_AppProfile1\",\n                        \"tagCollectionId\": 8,\n                        \"value\": \"App  profile centOS\",\n                        \"required\": false,\n                        \"editable\": false,\n                        \"name\": \"New_MetaData_AppProfile1\"\n                },\n                {\n                        \"id\": 13,\n                        \"namespace\": \"\",\n                        \"tagName\": \"ProfileName\",\n                        \"tagCollectionId\": 8,\n                        \"value\": \"CentOS\",\n                        \"required\": true,\n                        \"editable\": true,\n                        \"name\": \"ProfileName\"\n                },\n                {\n                        \"id\": 14,\n                        \"namespace\": \"\",\n                        \"tagName\": \"DeploymentScaling\",\n                        \"tagCollectionId\": 8,\n                        \"value\": \"Scaled up to one VM\",\n                        \"required\": true,\n                        \"editable\": false,\n                        \"name\": \"DeploymentScaling\"\n                },\n                {\n                        \"id\": 15,\n                        \"namespace\": \"\",\n                        \"tagName\": \"Name\",\n                        \"tagCollectionId\": 8,\n                        \"value\": \"%JOB_NAME%\",\n                        \"required\": true,\n                        \"editable\": false,\n                        \"name\": \"Name\"\n                }\n        ],\n        \"environmentId\": \"1\",\n        \"tagIds\": [\n                \"1\"\n        ],\n        \"securityProfileIds\": null,\n        \"agingPolicyId\": \"1\",\n        \"suspensionPolicyId\": null,\n        \"policyIds\": null,\n        \"preventTermination\": false,\n        \"parameters\": {\n                \"appParams\": [\n                        {\n                                \"name\": \"Test_Field\",\n                                \"value\": \"Default\"\n                        },\n                        {\n                                \"name\": \"Test_Number\",\n                                \"value\": \"1\"\n                        }\n                ],\n                \"cloudParams\": {\n                        \"cloudRegionId\": \"1\",\n                        \"accountId\": \"1\"\n                }\n        },\n        \"jobs\": [\n                {\n                        \"tierId\": \"32\",\n                        \"policyIds\": null,\n                        \"tagIds\": [],\n                        \"securityProfileIds\": null,\n                        \"parameters\": {\n                                \"appParams\": [\n                                        {\n                                                \"name\": \"referredJob\",\n                                                \"value\": \"\"\n                                        },\n                                        {\n                                                \"name\": \"SSHPreference\",\n                                                \"value\": \"NO_PREFERENCE\"\n                                        }\n                                ],\n                                \"envParams\": [],\n                                \"cloudParams\": {\n                                        \"cloudRegionId\": \"1\",\n                                        \"accountId\": \"1\",\n                                        \"volumes\": [\n                                                {\n                                                        \"name\": \"RootVolume\",\n                                                        \"bootable\": true,\n                                                        \"size\": null,\n                                                        \"type\": \"storage-Vcenter_65-default\",\n                                                        \"iops\": null\n                                                }\n                                        ],\n                                        \"rootVolumeSize\": \"0\",\n                                        \"cloudProperties\": [\n                                                {\n                                                        \"name\": \"FullClone\",\n                                                        \"value\": \"true\"\n                                                },\n                                                {\n                                                        \"name\": \"UserDataCenterName\",\n                                                        \"value\": \"PSC-Datacenter\"\n                                                },\n                                                {\n                                                        \"name\": \"UserClusterName\",\n                                                        \"value\": \"PCS-DC-Cluster\"\n                                                },\n                                                {\n                                                        \"name\": \"UserDatastoreCluster\",\n                                                        \"value\": \"VC65-LUN161\"\n                                                },\n                                                {\n                                                        \"name\": \"UserResourcePoolName\",\n                                                        \"value\": \"Cloud\"\n                                                },\n                                                {\n                                                        \"name\": \"VMGroup\",\n                                                        \"value\": \"\"\n                                                },\n                                                {\n                                                        \"name\": \"UserDatastore\",\n                                                        \"value\": \"\"\n                                                },\n                                                {\n                                                        \"name\": \"UserTargetDeploymentFolder\",\n                                                        \"value\": \"/Discovered virtual machine\"\n                                                },\n                                                {\n                                                        \"name\": \"CC_AUTO_SELECT_NETWORK\",\n                                                        \"value\": false\n                                                },\n                                                {\n                                                        \"name\": \"numNICs\",\n                                                        \"value\": \"\"\n                                                }\n                                        ],\n                                        \"nics\": [\n                                                {\n                                                        \"order\": 1,\n                                                        \"id\": \"172.23.14.x\",\n                                                        \"type\": \"NETWORK\"\n                                                }\n                                        ],\n                                        \"instance\": \"default\"\n                                }\n                        },\n                        \"appServices\": [],\n                        \"numNodesToLaunch\": 1\n                }\n        ],\n        \"timeZone\": \"GMT+05:30\",\n        \"responseJobJaxbNotRequired\": true\n}",
+          "api_call_method": "POST",
+          "continue_on_failure": false,
+          "display_name": "Create a Deployment in WM_20",
+          "relative_url": "cloudcenter-ccm-backend//api/v2/jobs",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "use_workflow_target": true
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GY9JOFFN4QX73qaubZVWxhfFXxps1bv2i",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "skip_execution": false,
+          "sleep_interval": 300
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GY98790K82N1pQDjAWrNNRAjBFBlOTsCD",
+        "name": "JSONPath Query",
+        "title": "Extract the JobID",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Extract the JobID",
+          "input_json": "$activity.definition_activity_01GY8UJ9WJ7NU4cvN1BomTP6UDeI0gOozvX.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.id",
+              "jsonpath_query_name": "JobID",
+              "jsonpath_query_type": "string"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GY999OB6N147QM2uRLbOMFELte4mvvZ4M",
+        "name": "Generic CCS API Request",
+        "title": "Get Job Details by ID",
+        "type": "ccs.api_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "api_call_method": "GET",
+          "continue_on_failure": false,
+          "display_name": "Get Job Details by ID",
+          "relative_url": "cloudcenter-ccm-backend//api/v2/jobs/$activity.definition_activity_01GY98790K82N1pQDjAWrNNRAjBFBlOTsCD.output.jsonpath_queries.JobID$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "use_workflow_target": true
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GY9IPERYX1620uspjd713fDi9d5y2I8Iq",
+        "name": "Set Variables",
+        "title": "Print the Deployment Details",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Print the Deployment Details",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01GY8QVDRGIIQ2nWXtMyPeJGr4c3WpEsdc2.output.variable_workflow_01GY9IFITGE7U4h6kXPPldi57HQmXbvkAko$",
+              "variable_value_new": "$activity.definition_activity_01GY999OB6N147QM2uRLbOMFELte4mvvZ4M.output.response_body$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GYA2DKVRWNJ3z9XZisdjyFBcLouwsEtAM",
+        "name": "Generic CCS API Request",
+        "title": "Fetch Job-Associated VM Details",
+        "type": "ccs.api_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "api_call_method": "GET",
+          "continue_on_failure": false,
+          "display_name": "Fetch Job-Associated VM Details",
+          "relative_url": "cloudcenter-ccm-backend/api/v1/jobs/$activity.definition_activity_01GY98790K82N1pQDjAWrNNRAjBFBlOTsCD.output.jsonpath_queries.JobID$/nodes",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "use_workflow_target": true
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GY9AGMT93XX5IPxiWOx1P1V4oMpUbkjud",
+        "name": "JSONPath Query",
+        "title": "Extract the VMID",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Extract the VMID",
+          "input_json": "$activity.definition_activity_01GYA2DKVRWNJ3z9XZisdjyFBcLouwsEtAM.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.nodes[0].virtualMachines[0].virtualMachineId",
+              "jsonpath_query_name": "VMID",
+              "jsonpath_query_type": "string"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GY9C15JAKS36mmDtBpiNF8Xx36mmG4Tub",
+        "name": "Generic CCS API Request",
+        "title": "Attach disk to A VM",
+        "type": "ccs.api_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "api_body": "{\n  \"resourceType\": \"VIRTUAL_MACHINE\",\n  \"executionSpecs\": [\n    {\n      \"name\": \"volumeInfoList\",\n      \"value\": \"[{\\\"minVolumeSize\\\":1,\\\"maxVolumeSize\\\":99999,\\\"maxIops\\\":200,\\\"size\\\":$workflow.definition_workflow_01GY8QVDRGIIQ2nWXtMyPeJGr4c3WpEsdc2.input.variable_workflow_01GY9DRB1EGQF7JEfR8Ljppg61SoMguTYDy$,\\\"type\\\":\\\"storage-Vcenter_65-default\\\",\\\"iops\\\":null}]\"\n    }\n  ],\n  \"executionResources\": [\n    {\n      \"id\": \"$activity.definition_activity_01GY9AGMT93XX5IPxiWOx1P1V4oMpUbkjud.output.jsonpath_queries.VMID$\"\n    }\n  ]\n}",
+          "api_call_method": "POST",
+          "continue_on_failure": false,
+          "display_name": "Attach disk to A VM",
+          "relative_url": "cloudcenter-ccm-backend//api/v1/actions/5/executions",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "use_workflow_target": true
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GY9JW9VU5WS0ABPFoCTVtlW2wAFagb98K",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "skip_execution": false,
+          "sleep_interval": 60
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GY9EGFL049B0nwMhh1cB80KQ44N9awbKg",
+        "name": "Generic CCS API Request",
+        "title": "Create a Snapshot",
+        "type": "ccs.api_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "api_body": "{\n  \"resourceType\": \"VIRTUAL_MACHINE\",\n  \"executionSpecs\": [\n    {\n      \"name\": \"snapshotName\",\n      \"value\": \"$workflow.definition_workflow_01GY8QVDRGIIQ2nWXtMyPeJGr4c3WpEsdc2.input.variable_workflow_01GY9DZ6DR00R5oPsW7FhxmVtvyn8MtiFQu$\"\n    }\n  ],\n  \"executionResources\": [\n    {\n      \"id\": \"$activity.definition_activity_01GY9AGMT93XX5IPxiWOx1P1V4oMpUbkjud.output.jsonpath_queries.VMID$\"\n    }\n  ]\n}",
+          "api_call_method": "POST",
+          "continue_on_failure": false,
+          "display_name": "Create a Snapshot",
+          "relative_url": "cloudcenter-ccm-backend//api/v1/actions/7/executions",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "use_workflow_target": true
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GY9JYZN3V7F1gn8EGbcUK20tsQj4mdTWX",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "skip_execution": false,
+          "sleep_interval": 60
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GY9HHHSU12T2CMurDgw0usG5ie7JaTTpq",
+        "name": "Generic CCS API Request",
+        "title": "Get VM Details by ID",
+        "type": "ccs.api_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "api_call_method": "GET",
+          "continue_on_failure": false,
+          "display_name": "Get VM Details by ID",
+          "relative_url": "cloudcenter-ccm-backend/api/v1/virtualMachines/$activity.definition_activity_01GY9AGMT93XX5IPxiWOx1P1V4oMpUbkjud.output.jsonpath_queries.VMID$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "use_workflow_target": true
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GY9J5R8EENL3IBgROZXRAjCyPWIB54sul",
+        "name": "Set Variables",
+        "title": "Print the VM Details",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Print the VM Details",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01GY8QVDRGIIQ2nWXtMyPeJGr4c3WpEsdc2.output.variable_workflow_01GY9ILBDHI2T5dp7xrv8drtLBTk7Euj1oK$",
+              "variable_value_new": "$activity.definition_activity_01GY9HHHSU12T2CMurDgw0usG5ie7JaTTpq.output.response_body$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GY9UNR1Z8GS7dBY05w3JYzvDbnEa5bLzy",
+        "name": "Generic CCS API Request",
+        "title": "Terminate the Deployment",
+        "type": "ccs.api_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "api_call_method": "DELETE",
+          "continue_on_failure": false,
+          "display_name": "Terminate the Deployment",
+          "relative_url": "cloudcenter-ccm-backend/api/v1/jobs/$activity.definition_activity_01GY98790K82N1pQDjAWrNNRAjBFBlOTsCD.output.jsonpath_queries.JobID$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "use_workflow_target": true
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_01GY8TT3NMA9R4Www15j0lZEvFpr8FHwfY7": {
+      "unique_name": "definition_target_01GY8TT3NMA9R4Www15j0lZEvFpr8FHwfY7",
+      "name": "172.25.5.20_WM",
+      "title": "172.25.5.20_WM",
+      "type": "ccsuite.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01GY8SHU7JQBK3Xis2Ezerfc0akVha0UNPc",
+        "display_name": "172.25.5.20_WM",
+        "host": "172.25.5.20",
+        "ignore_proxy": true,
+        "port": 31872,
+        "protocol": "https"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01GY8SHU7JQBK3Xis2Ezerfc0akVha0UNPc": {
+      "unique_name": "definition_runtime_user_01GY8SHU7JQBK3Xis2Ezerfc0akVha0UNPc",
+      "name": "172.25.5.20_WM",
+      "title": "172.25.5.20_WM",
+      "type": "runtime_user.ccs_explicit_user",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "172.25.5.20_WM",
+        "password": "*****",
+        "tenant_id": "*****",
+        "username": "*****"
+      }
+    }
+  }
+}
